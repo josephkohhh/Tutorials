@@ -1,0 +1,48 @@
+Switches 
+
+A statement that examines a value for a match against many case clauses.
+More efficient that many "else if" statements
+
+Ex.
+
+.js
+
+let grades = "A";
+let points = 50;
+
+switch (grades) {
+    case "A":
+        console.log("You did great!");
+        break;
+    case "B":
+        console.log("You did good!");
+        break;
+    case "C":
+        console.log("You did ok");
+        break;
+    case "D":
+        console.log("You did poor...");
+        break;
+    case "E":
+        console.log("You did badly...");
+        break;
+    default:
+        console.log(grades, "is not a letter grade");
+}
+
+switch (true) {
+    case points >= 85:
+        console.log("You are a platinum member");
+        break;
+    case points >= 75:
+        console.log("You are gold member");
+        break;
+    case points >= 60:
+        console.log("You are silver member");
+        break;
+    case points >= 50:
+        console.log("You are bronze member");
+        break;
+    default:
+        console.log("You are not a member");
+}

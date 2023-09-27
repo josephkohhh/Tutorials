@@ -1,0 +1,29 @@
+Rest Parameters
+
+Represents an indefinite number of parameters (pack arguments into an array)
+
+Ex.
+
+.js
+
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+let e = 5;
+
+let x = 6;
+let y = 7;
+
+console.log(`total sum: ${sum(a, b, c, d)}`);
+
+console.log(`total sum: ${sum(x, y, a, b, c, d)}`);
+
+function sum(...numbers) {
+    let total = 0;
+    for (number of numbers) {
+        total += number;
+    }
+    return total;
+}
+

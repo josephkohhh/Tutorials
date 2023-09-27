@@ -1,0 +1,49 @@
+Counter Program
+
+Ex. 
+
+.html
+
+    <label id="countLabel">number</label><br>
+
+    <button id="decreaseCount">Decrease</button>
+
+    <button id="resetCount">Reset</button>
+
+    <button id="increaseCount">Increase</button><br>
+
+.js
+
+let count = 0;
+
+document.getElementById("increaseCount").onclick = function () {
+
+    count += 1;
+
+    document.getElementById("countLabel").innerHTML = count;
+
+}
+
+document.getElementById("resetCount").onclick = function () {
+
+    count = 0;
+
+    document.getElementById("countLabel").innerHTML = count;
+
+}
+
+document.getElementById("decreaseCount").onclick = function () {
+
+    count -= 1;
+
+    document.getElementById("countLabel").innerHTML = count;
+
+}
+
+ 
+
+ 
+
+Auto Indent code::
+
+Shift + Option + F (Mac)

@@ -1,0 +1,11 @@
+What is HTML Favicon?
+
+The icon of the website
+
+Ex.
+
+.html
+
+ <link rel="icon" type="image/jpg" href="favicon.jpg">
+
+*Favicon is to be placed in the head tag

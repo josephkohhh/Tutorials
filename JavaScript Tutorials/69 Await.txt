@@ -1,0 +1,32 @@
+Await
+
+Makes an async function wait for a promise
+
+Ex.
+	
+.js
+
+async function loadFile() {
+    let fileLoad = false;
+    if (fileLoad) {
+        return "File uploaded!";
+    } else {
+        throw "File upload failed...";
+    }
+
+}
+
+async function startProcess() {
+    try {
+        let message = await loadFile();
+        console.log(message);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+startProcess();
+
+*Await must be inside an async function
+

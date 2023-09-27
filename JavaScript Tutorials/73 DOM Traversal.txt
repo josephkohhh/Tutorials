@@ -1,0 +1,50 @@
+DOM Traversal
+
+A few ways to traverse the DOM in Javascript
+
+Ex.
+
+.html
+
+    <ul id="fruits">
+        <li>apple</li>
+        <li>watermelon</li>
+        <li>papaya</li>
+    </ul>
+
+    <ul id="vegetables">
+        <li>carrot</li>
+        <li>potato</li>
+        <li>onion</li>
+    </ul>
+
+    <ul id="desserts">
+        <li>cake</li>
+        <li>pie</li>
+        <li>waffle</li>
+    </ul>
+
+.js
+
+let element = document.body;
+let child = element.firstElementChild;
+child.style.backgroundColor = "lightgreen";
+
+let element = document.querySelector("#vegetables");
+let child = element.firstElementChild;
+child.style.backgroundColor = "lightgreen";
+
+let element = document.querySelector("#dessert");
+let child = Array.from(element.children);
+child.forEach(c => c.style.backgroundColor = "lightgreen");
+
+// .firstElementChild
+// .lastElementChild
+// .parentElement
+// .nextElementSibling
+// .previousElementSibling
+// .children[]
+// .Array.from(.children)
+
+
+

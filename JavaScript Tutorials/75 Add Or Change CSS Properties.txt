@@ -1,0 +1,23 @@
+Add/Change CSS Properties
+
+A few ways to change CSS properties in Javascript
+
+Ex.
+
+.html
+
+    <h1 id="myTtile">This is my title</h1>
+
+.js
+
+const title = document.getElementById("myTtile");
+
+title.style.backgroundColor = "blue";
+title.style.color = "green";
+title.style.fontFamily = "arial";
+title.style.textAlign = "center";
+title.style.border = "2px solid";
+title.style.display = "none";
+title.style.display = "block";
+
+

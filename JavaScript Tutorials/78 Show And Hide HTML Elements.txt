@@ -1,0 +1,50 @@
+78 Show And Hide HTML Elements
+
+Show/Hide HTML elements using display or visibility
+
+Ex.
+
+.html
+
+    <button id="myButton">toggle</button>
+    <!-- <image id="myImg" src="city.jpg" style="display: hidden;"> -->
+    <image id="myImg" src="city.jpg" style="visibility: hidden;">
+    <p>press the button</p>
+
+.css
+
+#myButton{
+    display: block;
+}
+#myImg{
+    width:500px;
+}
+
+.js
+
+const myBtn = document.querySelector("#myButton");
+const myImg = document.querySelector("#myImg");
+
+// myButton.addEventListener("click", hideDisplay);
+
+// function hideDisplay() {
+//     if (myImg.style.display == "none") {
+//         myImg.style.display = "block";
+//     } else {
+//         myImg.style.display = "none";
+//     }
+// }
+
+myBtn.addEventListener("click", hideVisibility);
+
+function hideVisibility() {
+    if (myImg.style.visibility == "hidden") {
+        myImg.style.visibility = "visible";
+    } else {
+        myImg.style.visibility = "hidden";
+    }
+}
+
+
+
+

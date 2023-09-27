@@ -1,0 +1,21 @@
+Array forEach()
+
+Executes a provided callback function once for each array element 
+
+Ex.
+
+.js
+
+let names = ["max", "tom", "felicia"];
+
+function capitalize(element, index, array) {
+    array[index] = element[0].toUpperCase() + element.substring(1);
+}
+
+function print(element) {
+    console.log(element);
+}
+
+names.forEach(capitalize);
+names.forEach(print);
+

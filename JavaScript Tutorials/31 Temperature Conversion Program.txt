@@ -1,0 +1,43 @@
+Temperature Conversion Program
+
+A simple conversion program that utilizes functions, return statement, conversion and if-else statements.
+
+Ex.
+
+.html
+
+    <label>Enter a temperature:</label><br>
+    <input type="text" id="request"><br>
+    <label>Convert to: </label><br>
+    <input type="radio" id="cRadioBtn" name="Unit">
+    <label>Celsius</label><br>
+    <input type="radio" id="fRadioBtn" name="Unit">
+    <label>Fanhrenheit</label><br>
+    <input type="submit" id="myBtn"><br>
+    <label id="myAnswer"></label>
+
+.js
+
+document.getElementById("myBtn").onclick = function () {
+    var temp = document.getElementById("request").value;
+    temp = Number(temp);
+    if (document.getElementById("cRadioBtn").checked) {
+        let response = toCelsius(temp);
+        document.getElementById("myAnswer").innerHTML = response + "°c";
+    }
+    else if (document.getElementById("fRadioBtn").checked) {
+        let response = toFanrenheit(temp);
+        document.getElementById("myAnswer").innerHTML = response + "°f";
+    } else {
+        document.getElementById("myAnswer").innerHTML = "Please select a unit";
+    }
+}
+
+
+function toCelsius(temp) {
+    return (temp - 32) * (5 / 9);
+}
+
+function toFanrenheit(temp) {
+    return temp * 9 / 5 + 32;
+}

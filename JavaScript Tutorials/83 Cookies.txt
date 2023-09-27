@@ -1,0 +1,66 @@
+Cookies
+
+A small text file stored in your computer used to remember
+information about the user saved in name=value pairs 
+
+Ex.
+
+.html
+
+    <label for="firstText">First Name:</label>
+    <input id="firstText"><br>
+    <label for="lastText">Last Name:</label>
+    <input id="lastText"><br>
+    <button id="submitBtn">Submit</button>
+    <button id="getCookieBtn">GetCookies</button>
+    <button id="delCookieBtn">DeleteCookies</button>
+
+.css
+
+
+
+.js
+
+// document.cookie = "firstName = Spongebob; expires = Sun, 1 January 2030 12:00:00 UTC; path = /";
+// document.cookie = "lastName = Squarepants; expires = Sun, 1 January 2030 12:00:00 UTC; path = /";
+// console.log(document.cookie);
+
+const firstText = document.querySelector("#firstText");
+const lastText = document.querySelector("#lastText");
+const submitBtn = document.querySelector("#submitBtn");
+const getCookieBtn = document.querySelector("#getCookieBtn");
+const delCookieBtn = document.querySelector("#delCookieBtn");
+
+submitBtn.addEventListener("click", () => {
+    setCookie("firstName", firstText.value, 365);
+    setCookie("lastName", lastText.value, 365);
+})
+getCookieBtn.addEventListener("click", () => {
+    firstText.value = getCookies("firstName");
+    lastText.value = getCookies("lastName");
+})
+delCookieBtn.addEventListener("click", () => {
+    deleteCookies("firstName");
+    deleteCookies("lastName");
+})
+function setCookie(name, value, daysToLive) {
+    const date = new Date();
+    date.setTime(date.getTime() + (daysToLive * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${value};${expires}; path = /`;
+}
+function deleteCookies(name) {
+    setCookie(name, null, null);
+}
+function getCookies(name) {
+    const cDecoded = decodeURIComponent(document.cookie);
+    const cArray = cDecoded.split("; ");
+    let result = null;
+
+    cArray.forEach(element => {
+        if (element.indexOf(name) == 0) {
+            result = element.substring(name.length + 1)
+        }
+    })
+    return result;
+}

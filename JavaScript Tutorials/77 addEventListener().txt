@@ -1,0 +1,55 @@
+Events
+
+.addEventListener(event, function, useCapture)
+- you can add many event handlers to one element
+- even the same event that invokes different functions
+
+Ex.
+
+.html
+
+    <div id="outerDiv">
+        <div id="innerDiv"></div>
+    </div>
+
+.css
+
+#innerDiv {
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+#outerDiv {
+    background-color: lightgreen;
+    width: 200px;
+    height: 200px;
+}
+
+.js
+
+const innerDiv = document.getElementById("innerDiv");
+const outerDiv = document.getElementById("outerDiv");
+
+//Ex. 1
+innerDiv.addEventListener("mouseover", changeBlue);
+innerDiv.addEventListener("mouseout", changeGreen);
+
+function changeBlue() {
+    innerDiv.style.backgroundColor = "blue";
+}
+function changeGreen() {
+    innerDiv.style.backgroundColor = "lightgreen";
+}
+
+//Ex. 2
+innerDiv.addEventListener("click", changeBlue, true);
+outerDiv.addEventListener("click", changeBlue);
+
+
+function changeBlue() {
+    alert(`you selected ${this.id}`);
+    this.style.backgroundColor = "blue";
+}
+
+

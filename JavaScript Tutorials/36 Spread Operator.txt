@@ -1,0 +1,31 @@
+Spread Operator
+
+Allows an iterable such as an array or string to be expanded in places
+Where zero or more arguments are expected (unpacks the elements)
+
+Ex.
+
+.js
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(numbers);
+console.log(...numbers);
+
+let max = Math.max(...numbers);
+let min = Math.min(...numbers);
+
+console.log(max);
+console.log(min);
+
+let class1 = ["max", "john", "mary"];
+let class2 = ["tom", "bob", "ken"];
+
+class1.push(...class2);
+
+console.log(class1);
+console.log(...class1);
+
+
+
+

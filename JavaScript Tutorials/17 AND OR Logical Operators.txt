@@ -1,0 +1,28 @@
+AND OR Logical Operators 
+
+Gives us the ability to check more than 1 condition concurrently
+- && AND (Both conditions must be true)
+- || OR (Either condition can be true)
+
+Ex.
+
+.js
+
+let temp = 20;
+let sunny = true;
+
+if (temp >= 15 && temp <= 25 && sunny) {
+    console.log("Weather is good!");
+}
+else {
+    console.log("Weather is bad!");
+}
+
+let color = "black"
+
+if (color == "red" || color == "blue") {
+    console.log("This is my favorite color!")
+} else {
+    console.log("Not my favorite color!")
+
+}

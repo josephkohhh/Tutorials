@@ -1,0 +1,32 @@
+What is an arithmetic expression?
+
+It is a combination of operands (values, variables, etc) 
+operators (+ - * / %) that can be evaluated to a value 
+
+ex. 
+let students = 10;
+students = students + 10;
+students = students - 5;
+students = students * 2;
+students = students / 2;
+let extraStudents = students % 2;
+
+Augmented assignment operator (+= -= *= /= %=)
+
+ex.
+let students = 10;
+students += 1; 
+students -= 1;
+students *= 2;
+students /= 2;
+students %= 2;
+
+Operator precedence
+1. parenthesis ()
+2. exponents
+3. multiplication & division
+4. addition & subtraction
+
+ex.
+let result = 1 + 2 * (3 + 4) ans: 15
+let result = (1 + 2) * (3 + 4) ans: 21

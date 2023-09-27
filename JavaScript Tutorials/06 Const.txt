@@ -1,0 +1,18 @@
+Const 
+
+A constant is a variable that cannot be reassigned after it is initally assigned
+
+ex.
+
+const x = 3.14
+
+x +=10
+
+console.log(x);
+
+*Uncaught TypeError: Assignment to constant variable at ... 
+
+*When you use const to initialize an object, it means that you cannot assign a 
+ completely new object to that variable, but you can still modify the properties 
+ and values of the object itself
+

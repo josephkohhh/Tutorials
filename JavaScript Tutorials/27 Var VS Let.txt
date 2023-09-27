@@ -1,0 +1,35 @@
+Var vs Let
+
+Variable scope
+- where a variable is accessible
+
+Let
+- variables are limited to block scope {}
+
+Var
+- variables are limited to a function() {}
+
+Global variable
+- it is declared outside a function 
+- if global, using var will change browser's window properties 
+
+
+Ex.
+
+.js
+
+//let
+for (let i = 0; i <= 3; i++) {
+    console.log(i);
+}
+
+//var
+doSomething();
+
+function doSomething() {
+    for (var x = 0; x <= 3; x++) {
+        console.log(x);
+    }
+}
+
+

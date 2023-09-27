@@ -1,0 +1,18 @@
+Useful String Methods
+
+Ex.
+
+.js
+
+let x = "   user name";
+x = x.length;
+x = x.charAt(2);
+x = x.indexOf("e");
+x = x.lastIndexOf("e");
+x = x.trim();
+x = x.toUpperCase();
+x = x.toLowerCase();
+x = x.replaceAll(" ","");
+console.log(x); 
+
+There are many more methods but these are just some of the basic ones

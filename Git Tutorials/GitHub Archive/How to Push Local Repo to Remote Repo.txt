@@ -1,0 +1,20 @@
+*1. git init //init a new local repo 
+
+*2. git add -A 
+   //add all the files for staging 
+
+*3. git status
+   //check all files to be committed 
+
+*4. git commit -a -m "Initial Commit" 
+   //commit all the files to the local repo 
+
+5. git remote add origin https://github.com/username/repo-name.git
+   //link local repo to remote repo  
+
+6. git remote -v 
+   //show you all remotes set up in ur local repo & 
+     the urls that they refer to 
+
+*7. git push origin master
+   //push local commit to remote commit  

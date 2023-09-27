@@ -1,0 +1,53 @@
+Window
+
+It is an interface used to talk to the web browser
+- the DOM is a property of the window
+
+Ex.
+
+.html
+
+ <!-- <div id="myDiv"></div> -->
+    <button id="myBtn">Click</button>
+
+.css
+
+#myDiv {
+    width: 1000px;
+    height: 1000px;
+    background-color: azure;
+}
+
+.js
+
+console.dir(document);
+
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+console.log(window.outerHeight);
+console.log(window.outerWidth);
+
+console.log(window.scrollX);
+console.log(window.scrollY);
+
+console.log(window.location.href);
+console.log(window.location.hostname);
+console.log(window.location.pathname);
+window.location.href = "https://google.com"
+
+const myBtn = document.querySelector("#myBtn");
+myBtn.addEventListener("click", () => window.open("https://google.com"));
+myBtn.addEventListener("click", () => window.close());
+myBtn.addEventListener("click", () => window.print());
+
+window.alert("Hello!");
+window.confirm("press OK to continue!");
+
+let age = window.prompt("Enter age:");
+if (age < 18) {
+    window.alert("You must be 18+ to visit this site");
+}
+
+
+
+

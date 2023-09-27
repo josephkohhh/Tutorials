@@ -1,0 +1,32 @@
+Objects As Arguments
+
+
+
+Ex.
+
+.js
+
+class Car {
+    constructor(model, year, color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+}
+
+const car1 = new Car("Corvette", 2023, "Blue");
+const car2 = new Car("Toyota", 2019, "Red");
+const car3 = new Car("Lambo", 2020, "Yellow");
+
+function displayInfo(car) {
+    console.log(car.model);
+    console.log(car.year);
+    console.log(car.color);
+}
+function changeColor(car, color) {
+    car.color = color;
+}
+
+displayInfo(car2);
+changeColor(car3,"Black");
+displayInfo(car3);

@@ -1,0 +1,27 @@
+Random number generator program
+
+Ex.
+
+.html 
+
+    <div class="container">
+        <div class="upper-div">
+            <label id = "labelText">0</label>
+        </div>
+        <div class="lower-div">
+            <button id="clickBtn">Generate</button>
+        </div>
+
+.css
+
+.container {
+    text-align: center;
+}
+
+.js 
+
+document.getElementById("clickBtn").onclick = function () {
+    //let num = Math.random();
+    let num = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("labelText").innerHTML = num;
+}

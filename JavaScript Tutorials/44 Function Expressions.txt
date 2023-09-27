@@ -1,0 +1,36 @@
+Function Expressions
+
+A function without a name (anonymous function) avoid polluting the global scope with function names
+- write it, then forget about it
+
+Ex1. 
+
+.html
+
+        <label id="myLabel">0</label><br>
+        <button id="incrButton">Increase</button>
+        <button id="dcrButton">Decrease</button>
+
+.js
+
+let count = 0;
+
+document.getElementById("incrButton").onclick = function(){
+    count += 1;
+    document.getElementById("myLabel").innerHTML = count; 
+}
+
+document.getElementById("dcrButton").onclick = function() {
+    count -= 1;
+    document.getElementById("myLabel").innerHTML = count;
+}
+
+Ex2. 
+
+.js 
+
+const fullName = function(firstName,lastName) {
+  return firstName + " " + lastName;
+}
+
+console.log(`Welcome ${fullName("John","Doe")}!`)

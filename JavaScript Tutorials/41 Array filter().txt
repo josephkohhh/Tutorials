@@ -1,0 +1,18 @@
+Array filter()
+
+Creates a new array with all elements that pass the condition provided by a function 
+
+Ex.
+
+.js
+
+let age = [8, 12, 18, 26, 34];
+
+function checkAge(element) {
+    return element >= 18;
+}
+function print(element) {
+    console.log(element);
+}
+let adults = age.filter(checkAge);
+adults.forEach(print);

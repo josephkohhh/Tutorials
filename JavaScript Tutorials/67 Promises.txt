@@ -1,0 +1,41 @@
+Promises
+
+It is an object representing the eventual completion or failure of an asynchronous operation. 
+It can be in one of three states:
+- pending: initial state, neither fulfilled nor rejected.
+- fulfilled: operation completed successfully.
+- rejected: operation failed with an error.
+
+Ex.
+	
+.js
+
+// Ex1. 
+const promise = new Promise((resolve, reject) => {
+
+    let fileLoaded = true;
+
+    if (fileLoaded) {
+        resolve("File Loaded...");
+    }
+    else {
+        reject("File not loaded...");
+    }
+});
+
+promise.then(value => console.log(value))
+    .catch(error => console.log(error));
+
+// Ex.2
+const promise2 = new Promise(resolve => {
+    setTimeout(resolve, 3000);
+})
+
+promise2.then(() => console.log("Thanks for waiting!"));
+
+// Ex.3
+const wait = time => new Promise(resolve => {
+    setTimeout(resolve, time);
+})
+
+wait(3000).then(() => console.log("Thanks for waiting!"));

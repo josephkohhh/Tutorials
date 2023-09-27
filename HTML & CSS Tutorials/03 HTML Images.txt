@@ -1,0 +1,15 @@
+What is HTML Image?
+
+This tag displays an image
+
+Ex.
+
+.html
+
+    <a href="https://en.wikipedia.org/wiki/Dog">
+        <img src="dog.png" height="200" width="200" alt="picture of a dog">
+    </a>
+
+    <a href="https://en.wikipedia.org/wiki/Dog">
+        <img src="dog.gif" height="200" width="200" alt="picture of a dog">
+    </a>

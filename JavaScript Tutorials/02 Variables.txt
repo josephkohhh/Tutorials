@@ -1,0 +1,9 @@
+What is a variable? 
+
+A variable is a container for storing data 
+
+2 steps:
+1. declaration (var, let, const) 
+2. assignment (= assignment operator)
+
+

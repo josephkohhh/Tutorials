@@ -1,0 +1,16 @@
+console.time()
+
+Starts a timer to track how long a synchronous operations takes
+- use a unique name
+
+Ex.
+	
+.js
+
+console.time("Response time");
+
+alert("Click the OK button");
+
+console.timeEnd("Response time");
+
+*It does not track time for asynchronous operation

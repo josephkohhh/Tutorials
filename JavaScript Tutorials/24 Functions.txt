@@ -1,0 +1,28 @@
+Functions 
+
+Define code once, and use it many times. To perform some code, call the function name.
+
+Ex.
+
+.js 
+
+// let username = "Bro";
+// let age = 23;
+
+// function happyBirthday() {
+//     console.log("Happy Birthday!")
+// }
+
+// happyBirthday();
+
+startProgram();
+
+function startProgram() {
+    let username = "John";
+    let age = 18;
+    happyBirthday(username, age);
+}
+
+function happyBirthday(a, b) {
+    console.log("Happy Birthday " + a + "!" + " You are " + b + " years old!")
+}

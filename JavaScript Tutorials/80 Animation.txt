@@ -1,0 +1,106 @@
+Animation
+
+
+
+Ex.
+
+.html
+
+  <button id="myBtn">Click</button>
+    <div id="myDiv"></div>
+
+.css
+
+#myDiv {
+    height: 100px;
+    width: 100px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    position: relative;
+}
+
+.js
+
+const myBtn = document.getElementById("myBtn");
+const myDiv = document.getElementById("myDiv");
+
+myBtn.addEventListener("click", start);
+
+function begin() {
+    let timerId = null;
+    let x = 0;
+    let y = 0;
+
+    timerId = setInterval(frame, 5);
+
+    function frame() {
+        if (x >= 200 || y >= 200) {
+            clearInterval(timerId);
+        }
+        else {
+            x += 1;
+            y += 1;
+            myDiv.style.left = x + "px";
+            myDiv.style.top = y + "px";
+        }
+    }
+}
+function rotate() {
+    let timerId = null;
+    let degrees = 0;
+
+    timerId = setInterval(frame, 5);
+
+    function frame() {
+        if (degrees >= 360) {
+            clearInterval(timerId);
+        } else {
+            degrees += 1;
+            myDiv.style.transform = "rotateY(" + degrees + "deg)";
+        }
+    }
+
+}
+function beginAndRotate() {
+    let timerId = null;
+    let x = 0;
+    let y = 0;
+    let degrees = 0;
+
+    timerId = setInterval(spin, 5);
+
+    function spin() {
+        if (x >= 200 || y >= 200 || degrees >= 360) {
+            clearInterval(timerId);
+        } else {
+            x += 1;
+            y += 1;
+            degrees += 1;
+            myDiv.style.left = x + "px";
+            myDiv.style.top = y + "px";
+            myDiv.style.transform = "rotateZ(" + degrees + "deg)";
+        }
+    }
+}
+function start() {
+    let timerId = null;
+    let scaleX = 1;
+    let scaleY = 1;
+
+    timerId = setInterval(scale, 5);
+
+    function scale() {
+        if (scaleX >= 1.5 || scaleY >= 1.5) {
+            clearInterval(timerId);
+        } else {
+            scaleX += 0.01;
+            scaleY += 0.01;
+            myDiv.style.transform = "scale(" + scaleX + "," + scaleY + ")";
+        }
+    }
+}
+
+
+
+
+

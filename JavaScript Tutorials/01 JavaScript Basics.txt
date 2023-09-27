@@ -1,0 +1,16 @@
+What is JavaScript?
+
+JavaScript is a web-based programming language
+- add interactive behavior to webpages
+- build web and mobile apps
+- create command line tools
+- develop games
+
+*JavaScript is not the same as Java 
+
+File Extensions
+- .html
+- .css
+- .js
+
+ 

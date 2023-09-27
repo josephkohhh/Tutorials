@@ -1,0 +1,15 @@
+Do While Loops
+
+Do something, then check the condition, repeat if condition is true
+
+Ex.
+
+.js
+
+let username;
+
+do {
+    username = window.prompt("Enter username: ");
+} while (username == "" || username == null)
+
+console.log("Hello", username, "!");

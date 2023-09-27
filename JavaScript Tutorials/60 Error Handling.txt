@@ -1,0 +1,33 @@
+Error Handling
+
+Error 
+- executes a system-defined error
+
+Throw 
+- executes a user-defined error
+
+Finally
+- always executes regardless
+
+Ex.
+
+.js
+
+try {
+    let x = window.prompt("Enter a #");
+    x = Number(x);
+
+    if (isNaN(x)) throw "Not a number";
+    if (x == "") throw "That was empty!";
+
+    console.log(`${x} is a number`);
+
+}
+catch (error) {
+    console.log(error);
+}
+finally {
+    console.log("This always executes");
+}
+
+

@@ -1,0 +1,29 @@
+Anonymous Objects
+
+Objects without a name
+- not directly referenced
+- less syntax needed
+- no need for unique names
+
+Ex.
+
+.js
+
+class Card {
+    constructor(value, suit) {
+        this.value = value;
+        this.suit = suit;
+    }
+
+}
+
+let cards = [
+    new Card("10", "Spades"),
+    new Card("9", "Clubs"),
+    new Card("8", "Diamonds"),
+    new Card("7", "Hearts"),
+];
+
+console.log(`${cards[0].value}${cards[0].suit}`);
+cards.forEach((element) => console.log(`${element.value}${element.suit}`));
+cards.forEach((element) => console.log(element));

@@ -1,0 +1,47 @@
+Checked Property
+
+It sets or returns the checked state of a checkbox
+
+Ex.
+
+.html
+
+    <label for="checkBox">Subscribe</label>
+    <input type="checkbox" id="checkBox"></input><br>
+
+    <label for="googlePay">Google Pay</label>
+    <input type="radio" name="card" id="googlePay"></input>
+    <label for="applePay">Apple Pay</label>
+    <input type="radio" name="card" id="applePay"></input>
+    <label for="payPalPay">PayPal Pay</label>
+    <input type="radio" name="card" id="payPalPay"></input><br>
+
+    <button id="subBtn">Click</button>
+
+.js
+
+document.getElementById("subBtn").onclick = function () {
+    const checkBox = document.getElementById("checkBox");
+    const googlePay = document.getElementById("googlePay");
+    const applePay = document.getElementById("applePay");
+    const payPalPay = document.getElementById("payPalPay");
+
+    if (checkBox.checked) {
+        console.log("You are Subscribed!");
+    } else
+        console.log("You are not subscribed!");
+
+    if (googlePay.checked) {
+        console.log("You chosen Google Pay!");
+    }
+    else if (applePay.checked) {
+        console.log("You chosen Apple Pay!");
+    }
+    else if (payPalPay.checked) {
+        console.log("You chosen PayPal Pay!");
+    }
+    else {
+        console.log("Please choose a payment");
+    }
+
+

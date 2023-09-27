@@ -1,0 +1,22 @@
+2D Arrays
+
+An array of arrays
+
+Ex.
+
+.js
+
+let fruits = ["apple", "orange", "banana"];
+let vegetables = ["carrot", "onion", "potato"];
+let meats = ["chicken", "fish", "steak"];
+
+let groceryList = [fruits, vegetables, meats];
+
+groceryList[0][2] = "papaya";
+groceryList[2][0] = "beef";
+
+for (list of groceryList) {
+    for (l of list) {
+        console.log(l);
+    }
+}

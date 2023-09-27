@@ -1,0 +1,90 @@
+RockPaperScissors Program
+
+A RockPaperScissors game
+
+Ex.
+
+.html
+
+<div id="gameDiv">
+        <h1 class="gameText" id="playerText">Player: </h1>
+        <h1 class="gameText" id="computerText">Computer: </h1>
+        <h1 class="gameText" id="resultText">Result: </h1>
+        <button class="choiceButton">Rock</button>
+        <button class="choiceButton">Paper</button>
+        <button class="choiceButton">Scissors</button>
+    </div>
+
+.css
+
+.choiceButton {
+    line-height: 30px;
+    width: 150px;
+}
+
+#gameDiv {
+    font-family: 'Arial', cursive;
+    border: 3px solid;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: lightgrey;
+    text-align: center;
+}
+
+#playerText {
+    color: blue;
+}
+
+#computerText {
+    color: red;
+}
+
+.js
+
+const playerText = document.querySelector("#playerText");
+const computerText = document.querySelector("#computerText");
+const resultText = document.querySelector("#resultText");
+const choiceBtn = document.querySelectorAll(".choiceButton");
+
+let player;
+let computer;
+let result;
+
+choiceBtn.forEach(button => button.addEventListener("click", () => {
+    player = button.textContent;
+    computerTurn();
+    playerText.textContent = `Player: ${player}`;
+    computerText.textContent = `Computer: ${computer}`;
+    resultText.textContent = checkWinner();
+}));
+
+function computerTurn() {
+    const randNum = Math.floor(Math.random() * 3) + 1;
+
+    switch (randNum) {
+        case 1:
+            computer = "Rock";
+            break;
+        case 2:
+            computer = "Paper";
+            break;
+        case 3:
+            computer = "Scissors";
+            break;
+    }
+}
+
+function checkWinner() {
+    if (player == computer) {
+        return "Draw!";
+    }
+    else if (computer == "Rock") {
+        return (player == "Paper") ? "You win!" : "You lose!";
+    }
+    else if (computer == "Paper") {
+        return (player == "Scissors") ? "You win!" : "You lose!";
+    }
+    else if (computer == "Scissors") {
+        return (player == "Rock") ? "You win!" : "You lose!";
+    }
+}

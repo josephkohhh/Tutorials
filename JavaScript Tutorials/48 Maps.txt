@@ -1,0 +1,23 @@
+Maps
+
+Object that holds key-value pairs of any data type
+
+Ex. 
+
+.js
+
+const store = new Map([
+    ["shirt", 10],
+    ["jeans", 50],
+    ["socks", 4],
+    ["shoes", 30]
+]);
+
+console.log(store);
+store.forEach((value, key) => console.log(`${key},$${value}`));
+
+console.log(store.get("socks"));
+console.log(store.set("hat", 20));
+console.log(store.delete("hat"));
+console.log(store.has("gloves"));
+console.log(store.size);

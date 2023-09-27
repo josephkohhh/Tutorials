@@ -1,0 +1,17 @@
+What is a Hyperlink?
+
+Clicking on a hyperlink will route you to a new webpage or website
+
+Ex.
+
+.html
+
+    <a href="https://www.google.com" target="_blank" title="this is a tool tip">click me</a>
+
+    <br>
+
+    <a href="lyrics.html">Song lyrics</a>
+
+    <br>
+
+    <a href="mailto:name@gmail.com">Email me</a>

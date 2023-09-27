@@ -1,0 +1,26 @@
+HTML Buttons
+
+Ex.
+
+.html
+
+    <button style="font-size:25px;background-color: lightgreen;color: #fff;border-radius: 10px;">Click Me</button>
+    <br>
+    <br>
+    <a href="https://google.com">
+        <button
+            style="font-size:25px;background-color: blueviolet;color: #fff;border-radius: 10px; cursor: pointer;">Click
+            Me</button>
+    </a>
+    <br>
+    <br>
+    <button onclick="doSomething()"
+        style="font-size:25px;background-color:sandybrown ;color: #fff;border-radius: 10px; cursor: pointer;">Click
+        Me</button>
+    <h2 id="greetings">Hello</h2>
+
+    <script>
+        function doSomething() {
+            document.getElementById("greetings").textContent = "Goodbye";
+        }
+    </script>   

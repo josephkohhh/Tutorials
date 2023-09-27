@@ -1,0 +1,37 @@
+Array Of Objects
+
+Store objects in an array
+
+Ex.
+
+.js
+
+class Car {
+    constructor(model, year, color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+    drive() {
+        console.log(`you drive the ${this.model}`);
+    }
+
+}
+
+const car1 = new Car("Mustang", 2003, "Blue");
+const car2 = new Car("Lambo", 2005, "Orange");
+const car3 = new Car("Corvette", 1997, "White");
+
+const cars = [car1, car2, car3];
+
+console.log(cars[1].color);
+cars[2].drive();
+cars[0].drive();
+
+startRace(cars);
+
+function startRace(cars) {
+    for (const car of cars) {
+        car.drive();
+    }
+}

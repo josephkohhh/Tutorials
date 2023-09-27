@@ -1,0 +1,13 @@
+While Loops
+
+Repeat some code while some condition is true potentially infinite 
+
+Ex.
+
+.js
+
+let username = ""
+while (username == "" || username == null) {
+    username = window.prompt("Enter username");
+}
+console.log("Hello",username);

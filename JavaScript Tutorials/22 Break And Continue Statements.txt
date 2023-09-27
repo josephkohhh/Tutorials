@@ -1,0 +1,22 @@
+Break And Continue Statements
+
+Break - Breaks out of a loop entirely
+Continue - Skip an iteration of a loop
+
+Ex.
+
+.js
+
+for (let i = 1; i <= 30; i += 1) {
+    if (i == 28) {
+        break;
+    }
+    console.log(i);
+}
+
+for (let i = 1; i <= 30; i += 1) {
+    if (i == 28) {
+        continue;
+    }
+    console.log(i);
+}

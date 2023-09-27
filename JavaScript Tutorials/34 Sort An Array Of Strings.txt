@@ -1,0 +1,23 @@
+Sort An Array Of Strings
+
+An array used to store a collection of values.
+Think of it as a variable that can store multiple values.
+
+Ex.
+
+.js
+
+let fruits = ["mango", "papaya", "watermelon", "apple"];
+
+fruits.sort(); //sort by alphabetical order
+fruits.sort().reverse(); //sort by reverse alphabetical order 
+
+// for (i=0;i<fruits.length;i+=1){
+//     console.log(fruits[i]);
+// }
+
+for (fruit of fruits) {
+    console.log(fruit);
+}
+
+

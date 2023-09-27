@@ -1,0 +1,25 @@
+Asynchronous Vs Synchronous Code
+
+Synchronous Code 
+- in an ordered sequence
+- step by step linear equations
+- start now, finish now
+
+Asynchronous Code 
+- out of sequence
+- start now, finish sometime later
+- ex. (access db, fetch file, tasks that take time)
+
+Ex.
+	
+.js
+
+//Synchronous
+console.log("START");
+console.log("This is Synchronous!");
+console.log("END!");
+
+//Asynchronous
+console.log("START");
+setTimeout(()=> console.log("This is Asynchronous!"),5000);
+console.log("END!");

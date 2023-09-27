@@ -1,0 +1,32 @@
+Ternary Operator
+
+Shortcut for an 'if/else statement'. Takes 3 operands
+- a condition with ?
+- expression if true 
+- expression if false  
+
+Ex.
+
+.js
+
+let isAdult = checkAge(22);
+
+console.log(isAdult);
+
+// function checkAge(a) {
+//     if (a >= 18) {
+//         return true;
+//     } else
+//         return false;
+// }
+
+function checkAge(a) {
+    return a >= 18 ? true : false;
+}
+
+checkWinner(false);
+
+function checkWinner(x) {
+    x ? console.log("Win!") : console.log("Lose!")
+}
+

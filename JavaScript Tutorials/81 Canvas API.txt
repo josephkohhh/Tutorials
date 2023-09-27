@@ -1,0 +1,84 @@
+Canvas API
+
+A means for drawing graphics used for animations, games, data visualisation
+
+Ex.
+
+.html
+
+<canvas id="myCanvas" width="500" height = "500"></canvas>
+
+.css
+
+#myCanvas{
+    border:1px solid black;
+    /* background-color: skyblue; */
+}
+
+.js
+
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");
+
+// draw lines
+context.beginPath();
+context.moveTo(0, 0);
+context.lineTo(500, 500);
+context.moveTo(500, 0);
+context.lineTo(0, 500);
+context.stroke();
+context.lineWidth = 0.5;
+context.strokeStyle = "black";
+
+// draw triangle
+context.beginPath();
+context.moveTo(250, 0);
+context.lineTo(0, 250);
+context.lineTo(500, 250);
+context.lineTo(250, 0);
+context.lineWidth = 0.5;
+context.fillStyle = "green";
+context.fill();
+
+// draw rectangle
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.strokeRect(0, 0, 250, 250);
+context.fillStyle = "red";
+context.fillRect(0, 0, 250, 250);
+
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.strokeRect(250, 0, 250, 250);
+context.fillStyle = "orange";
+context.fillRect(250, 0, 250, 250);
+
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.strokeRect(0, 250, 250, 250);
+context.fillStyle = "yellow";
+context.fillRect(0, 250, 250, 250);
+
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.strokeRect(250, 250, 250, 250);
+context.fillStyle = "green";
+context.fillRect(250, 250, 250, 250);
+
+// draw circle
+(x, y, r, startingAngle, endingAngle, counterlockwise)
+context.beginPath();
+context.arc(250, 250, 200, 0, 2 * Math.PI);
+context.lineWidth = 5;
+context.strokeStyle = "black";
+context.fillStyle = "lightblue";
+context.fill();
+
+// draw text
+context.font = "50px MV Boli";
+context.fillStyle = "Orange";
+context.textAlign = "center";
+context.fillText("you WIN!",canvas.width / 2, canvas.height / 2);
+
+context.stroke();
+

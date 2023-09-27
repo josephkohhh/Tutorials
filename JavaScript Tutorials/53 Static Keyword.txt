@@ -1,0 +1,37 @@
+Static Keyword
+
+It is to call a static method or access a static property 
+without creating an instance of the class.
+
+Belongs to the class, not the objects
+- properties: useful for caches, fixed-configuration
+- methods: useful for utility functions
+
+Ex. 
+
+.js
+
+class Car {
+
+    static noOfCars = 0; //using static, each car can share same property
+
+    constructor(model) {
+        this.model = model
+        Car.noOfCars += 1;
+    }
+
+    static startRace() {
+        console.log("3...2...1...GO!")
+    }
+}
+
+const car1 = new Car("Mustang");
+const car2 = new Car("Lambo");
+const car3 = new Car("Toyota");
+const car4 = new Car("Mercedes");
+
+console.log(Car.noOfCars);
+
+Car.startRace();
+
+

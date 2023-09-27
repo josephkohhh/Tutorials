@@ -1,0 +1,23 @@
+Git is a version control system 
+- tracks version history in a repository 
+- allows collaboration 
+
+Version control system 
+- centralised 
+- distributed 
+
+Centralised system (subversion, team foundation server)
+- all team member connect to central server to get latest copy and share
+  changes with others. 
+- if server goes down, have to wait for it to get back online
+
+Distributed system (git, mercurial)
+- every team member have a copy of the project and history on their local
+- if server goes down, able to sync with other team members
+  
+Why git?
+- free
+- open source
+- fast
+- scalable
+- cheap branching/merging

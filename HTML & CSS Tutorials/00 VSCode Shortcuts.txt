@@ -1,0 +1,13 @@
+VS Code Shortcut Keys
+
+To indent 
+Windows/Linux: Shift + Option + F
+Mac: Shift + Option + F
+
+To comment/uncomment all:
+Windows/Linux: Ctrl + /
+Mac: Cmd + /
+
+
+VS Code Extensions
+- Live Server: Enable live changes on the web browser when saving file

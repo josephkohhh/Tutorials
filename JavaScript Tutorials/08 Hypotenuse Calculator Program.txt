@@ -1,0 +1,39 @@
+Hypotenuse Calculator Program
+ 
+Ex.
+
+.html
+
+    <label id="aLabe">A: </label>
+
+    <input type="text" id="aTextBox"></input><br>
+
+    <label id="bLabel">B: </label>
+
+    <input type="text" id="bTextBox"></input><br>
+
+    <button type="button" id="buttonFunction">Click</button><br>
+
+    <label id="cLabel"></label>
+
+.js
+
+let a;
+let b;
+let c;
+
+document.getElementById("buttonFunction").onclick = function(){
+
+    a = document.getElementById("aTextBox").value;
+
+    a = Number(a);
+
+    b = document.getElementById("bTextBox").value;
+
+    b = Number(b);
+
+    c = Math.sqrt(Math.pow(a,2)+ Math.pow(b,2));
+
+    document.getElementById("cLabel").innerHTML = "C: "+ c;
+
+}

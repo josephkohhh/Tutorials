@@ -1,0 +1,44 @@
+ES6 Modules
+
+Modules are a way to organise code into separate, reusable links
+making it easier to manage and maintain larger codebases
+
+Ex.
+	
+.html
+
+<script type="module"src="index.js"></script>
+
+math_util.js
+
+export const PI = 3.14159;
+
+export function getCircumference(radius){
+    return 2 * PI * radius;
+}
+
+export function getArea(radius){
+    return PI * radius * radius;
+}
+
+index.js
+
+//Ex1.
+import { PI, getCircumference, getArea } from "./math_util.js";
+
+console.log(PI);
+
+let circumference = getCircumference(10);
+let area = getArea(10);
+console.log(circumference); 
+console.log(area);
+
+//Ex2.
+import * as math_util from "./math_util.js";
+
+console.log(math_util.PI);
+
+let circumference = math_util.getCircumference(10);
+let area = math_util.getArea(10);
+console.log(circumference);
+console.log(area);

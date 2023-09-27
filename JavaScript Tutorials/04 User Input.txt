@@ -1,0 +1,15 @@
+User input 
+
+ex.
+
+.html
+<label id=""></label>
+<input type="text" id=""></text>
+<button type="button" id=""></button>
+
+.js
+let username;
+document.getElementById("").onclick = function() {
+username = document.getElementById("").value;
+document.getElementbyId().innerHTML = "Hello "+ username;
+console.log(username);

@@ -1,0 +1,28 @@
+Loop Through An Array
+
+An array used to store a collection of values.
+Think of it as a variable that can store multiple values.
+
+Ex.
+
+.js
+
+var fruits = ["Mango","Orange","Apple","Watermelon"];
+
+for(i=0;i<fruits.length;i+=1){
+        console.log(fruits[i]);
+    }
+
+for (fruit of fruits){
+    console.log(fruit);
+}
+
+for(x=fruits.length-1;x>=0;x-=1){
+    console.log(fruits[x]);
+}
+
+
+
+
+
+

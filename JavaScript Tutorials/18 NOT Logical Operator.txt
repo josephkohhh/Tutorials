@@ -1,0 +1,25 @@
+! NOT Logical Operators 
+
+Typically use to reverse a condition's boolean value
+TRUE -> FALSE 
+FALSE -> TRUE
+
+Ex.
+
+.js
+
+let temp = 14;
+let sunny = false;
+
+if (!(temp > 25)) {
+    console.log("It is Cold");
+}
+else {
+    console.log("It is Warm");
+}
+
+if (!sunny) {
+    console.log("It is Cloudy");
+} else {
+    console.log("It is Sunny");
+}

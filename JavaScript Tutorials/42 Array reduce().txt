@@ -1,0 +1,19 @@
+Array reduce()
+
+Reduces an array to a single value 
+
+Ex. 
+
+.js
+
+let prices = [10, 20, 30, 40];
+
+function checkTotal(total, element) {
+    return total + element;
+}
+
+let totalPrice = prices.reduce(checkTotal);
+
+console.log(`The price is $${totalPrice}`);
+
+*It is best used to sum up an array of values

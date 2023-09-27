@@ -1,0 +1,22 @@
+setInterval()
+
+Invokes a function repeatedly after a number of milliseconds
+- asynchronous function (doesn't pause execution of the program)
+
+Ex.
+
+.js
+
+let count = 0;
+let max = window.prompt("Count up to what no. ?");
+max = Number(max);
+
+const endCount = setInterval(countUp, 2000);
+
+function countUp() {
+    count += 1;
+    console.log(count);
+    if (count >= max) {
+        clearInterval(endCount);
+    }
+}

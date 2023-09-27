@@ -1,0 +1,26 @@
+Sort An Array Of Numbers
+
+Sorting an array of numbers in ascending or descending number
+
+Ex. 
+
+.js
+
+grades = [100, 75, 40, 65, 50, 85];
+
+function ascendingOrder(a, b) {
+    return a - b;
+}
+
+function descendingOrder(a, b) {
+    return b - a;
+}
+
+function print(element) {
+    console.log(element);
+}
+
+grades.sort(ascendingOrder); //sort by ascending order
+grades.sort(descendingOrder); //sort by descending order 
+
+grades.forEach(print);

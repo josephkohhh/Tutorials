@@ -1,0 +1,36 @@
+Date Objects
+
+It is used to work with date and time
+
+Ex.
+
+.html
+
+    <label id="myLabel"></label><br>
+    <label id="myLabel2"></label>
+	
+.js
+
+let date = new Date();
+
+document.getElementById("myLabel").innerHTML = formatDate(date);
+document.getElementById("myLabel2").innerHTML = formatTime(date);
+
+function formatDate(date) {
+    let days = date.getDate();
+    let months = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    return `${days}/${months}/${year}`;
+}
+
+function formatTime(date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let amOrPm = hours >= 12 ? "pm" : "am";
+
+    hours = (hours % 12) || 12; //convert to standard time
+
+    return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+}

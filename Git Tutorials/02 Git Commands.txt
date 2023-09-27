@@ -1,0 +1,106 @@
+Git Commands
+
+//clear terminal or git cache
+git clean
+
+//return to home dir
+cd ~
+
+//remove all prev commands
+clear
+
+----------------------------------------------------------
+Scenario 1: To pull files from remote repo
+----------------------------------------------------------
+
+//select a path to store files
+cd /path/to/your/local/repository
+
+//create a folder to store files
+mkdir <folder_name>
+
+//select the folder path 
+cd <folder_name>
+
+//init a new local repo 
+git init
+
+//pull from remote repo
+git pull <url> <branch_name>
+
+----------------------------------------------------------
+Scenario 2: Change branch, commit and push to remote repo 
+----------------------------------------------------------
+
+//open folder in vscode
+
+//create branch
+git checkout -b <branch_name>
+
+//select branch
+git checkout <branch_name>
+
+//add specific files for staging 
+git add <file_path1> <file_path2> ...
+
+//commit all files to the local repo 
+git commit -m "Commit message"
+
+//push to remote repo
+git push <remote_name> <branch_name>
+
+----------------------------------------------------------
+Scenario 3: To upload local repo to remote repo
+----------------------------------------------------------
+
+//select desired local filepath 
+cd /path/to/your/local/repository
+
+//init a new local repo 
+git init
+
+//add all files for staging 
+git add -A
+//add specific files for staging 
+git add <file_path1> <file_path2> ...
+
+//check all files to be committed 
+git status
+
+//commit all files to the local repo 
+git commit -m "Commit message"
+
+//link local repo to remote repo
+git remote add origin <repository_url> 
+
+//show all remotes set up local repo & urls they refer to 
+git remote -v 
+
+//push local commit to remote commit  
+git push origin main 
+or
+git push --force origin main
+
+----------------------------------------------------------
+Scenario 4: To rollback previous pull request/commit 
+----------------------------------------------------------
+
+//get latest changes in local repo
+git fetch origin
+
+//the branch where the pull request was merged:
+git checkout target-branch
+
+//new branch to work on the revert
+git checkout -b revert-pull-request
+
+//use git revert to create new commit that undoes changes of the pull request
+git revert -m 1 <commit-hash>
+
+//press Esc to ensure you're in normal mode.
+//type :wq and press Enter. This stands for "write" (save) and "quit" (exit).
+
+//push to remote repo
+git push origin revert-pull-request
+
+//create pull request to merge revert-pull-request branch to target branch

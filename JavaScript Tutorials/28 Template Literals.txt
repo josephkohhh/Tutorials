@@ -1,0 +1,39 @@
+Template Literals
+ 
+Delimited with (`) instead of double or single quotes. 
+It allows embedded variables and expression.
+
+Ex.
+
+.html
+
+<label id="myLabel"></label>
+
+.js
+
+let username = 'John';
+let item = 3;
+let total = 75;
+
+console.log("Hello " + username);
+console.log("You have", item, "items in your cart");
+console.log("Your total is", total);
+
+//template literals
+console.log(`Hello ${username}`);
+console.log(`You have ${item} items in your cart`);
+console.log(`Your total is ${total}`);
+
+let text = "Hello " + username + " You have " + item + " items in your cart. Your total is " + total;
+console.log(text);
+
+//template literals
+let text2 = `Hello ${username}
+You have ${item} items in your cart
+Your total is ${total}`;
+
+console.log(text2);
+
+document.getElementById("myLabel").innerHTML = text2;
+
+

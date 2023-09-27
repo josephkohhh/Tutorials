@@ -1,0 +1,35 @@
+Arrow Function Expressions
+
+Arrow Function = Compact alternative to a traditional function expression
+
+Ex. 
+
+.js
+
+//Ex1. 
+//function expression
+const percent = function (x, y) {
+    return x / y * 100;
+}
+console.log(`${percent(75, 100)}%`)
+
+//arrow expression
+const percent2 = (x, y) => x / y * 100;
+console.log(`${percent2(75, 100)}%`)
+
+//Ex2.
+//function expression
+let grades = [40, 50, 75, 100];
+
+grades.sort(function (a, b) {
+    return a - b;
+});
+grades.forEach(function (element) {
+    console.log(element);
+});
+
+//arrow expression
+let grades2 = [40, 50, 75, 100];
+
+grades2.sort((a, b) => a - b);
+grades2.forEach((element) => console.log(element));

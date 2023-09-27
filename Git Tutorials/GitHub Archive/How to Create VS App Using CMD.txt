@@ -1,0 +1,5 @@
+1. dotnet 
+   //provides commands for .net projects
+
+2. dotnet new console -lang "C#";
+   //creates new console app with C# as the language

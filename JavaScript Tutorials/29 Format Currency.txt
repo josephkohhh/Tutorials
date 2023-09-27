@@ -1,0 +1,34 @@
+Format Currency
+
+toLocaleString() returns a string with a language sensitive representation of this number
+
+number.toLocaleString(Locale, {options});
+
+Locale 
+- specify the language (undefined = default set in it)
+
+Options
+- object with formatting options
+
+Ex.
+
+.js
+
+let myNumber = 123456.789
+let myUnit = .5
+
+myNumber = myNumber.toLocaleString("en-US"); //US English
+myNumber = myNumber.toLocaleString("hi-IN"); //Hindi
+myNumber = myNumber.toLocaleString("de-DE"); //Standard German
+
+myNumber = myNumber.toLocaleString("en-US", { style: "currency", currency: "USD" });
+myNumber = myNumber.toLocaleString("hi-IN", { style: "currency", currency: "INR" });
+myNumber = myNumber.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+
+myUnit = myUnit.toLocaleString(undefined, { style: "percent" });
+myUnit = myUnit.toLocaleString(undefined, { style: "unit", unit: "celsius" });
+myUnit = myUnit.toLocaleString(undefined, { style: "unit", unit: "kilogram" }); 
+
+console.log(myNumber);
+console.log(myUnit);
+

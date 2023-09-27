@@ -1,0 +1,19 @@
+DOM Intro
+
+It is a document object model (API)
+- an interface for changing the content of the page
+
+Ex.
+	
+.js
+
+console.log(document);
+console.dir(document);
+console.log(document.title);
+console.log(document.URL);
+
+document.title = "Title goes here!";
+// document.location = "http://www.google.com";
+
+document.body.style.backgroundColor = "skyblue";
+document.getElementById("myLabel").innerHTML = "Hello";

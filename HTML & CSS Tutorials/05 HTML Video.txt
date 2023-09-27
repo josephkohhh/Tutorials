@@ -1,0 +1,22 @@
+What is HTML Video?
+
+This tag uploads video file
+
+Ex.
+
+.html
+
+    <a target="_blank" href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda">
+        <video width="750px" controls autoplay muted loop>
+            <source src="zelda.mp4" type="video/mp4">
+            <source src="zelda.webm" type="video/webm">
+        </video>
+    </a>
+
+    <!-- To add a hyperlink to a video -->
+    <a target="_blank" href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda">
+        <video width="750px" controls autoplay muted loop>
+            <source src="zelda.mp4" type="video/mp4">
+            <source src="zelda.webm" type="video/webm">
+        </video>
+    </a>

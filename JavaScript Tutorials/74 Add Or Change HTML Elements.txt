@@ -1,0 +1,29 @@
+Add/Change HTML Elements
+
+A few ways to add/change HTML elements in Javascript
+- .innerHTML (vulnerable to XSS attacks)
+- .textContent (more secure)
+
+Ex.
+
+.html
+
+    <ul id="fruits">
+        <li>apple</li>
+        <li>watermelon</li>
+        <li>papaya</li>
+    </ul>
+
+.js
+
+const nameTag = document.createElement("h1");
+nameTag.textContent = window.prompt("Enter username");
+document.body.append(nameTag);
+
+const myList = document.querySelector("#fruits");
+const listItem = document.createElement("li");
+listItem.textContent = "mango";
+myList.append(listItem);
+myList.prepend(listItem);
+myList.insertBefore(listItem,myList.getElementsByTagName("li")[2]);
+

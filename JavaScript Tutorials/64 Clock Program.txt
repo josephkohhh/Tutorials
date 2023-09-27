@@ -1,0 +1,41 @@
+Clock Program
+
+
+
+Ex.
+
+.html
+
+    <label id="myLabel"></label>
+	
+.js
+
+let clock = document.getElementById("myLabel");
+
+setInterval(update,1000);
+
+function update() {
+    let date = new Date();
+    clock.innerHTML = formatDate(date);
+
+    function formatDate(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let amOrPm = hours >= 12 ? "pm" : "am"
+
+        hours = (hours % 12) || 12;
+
+        hours = formatTime(hours);
+        minutes = formatTime(minutes);
+        seconds = formatTime(seconds);
+
+        return `${hours}:${minutes}:${seconds}${amOrPm}`;
+    }
+
+    function formatTime(time) {
+        time = time.toString();
+        return time.length < 2 ? "0" + time : time;
+    }
+
+}

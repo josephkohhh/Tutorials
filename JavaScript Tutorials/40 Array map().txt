@@ -1,0 +1,21 @@
+Array map()
+
+Executes a provided callback function once for each array element and creates a new array
+
+Ex.
+
+.js
+
+let numbers = [2, 4, 6, 8, 10];
+
+function cube(element) {
+    return Math.pow(element, 3);
+}
+
+function print(element) {
+    console.log(element);
+}
+
+let cubes = numbers.map(cube); 
+
+cubes.forEach(print);

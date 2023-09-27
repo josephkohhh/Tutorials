@@ -1,0 +1,42 @@
+HTML Header & Footers
+
+Header is used for introductory content of the webpage
+- title, navbar
+Footer is used for concluding content of the webpage 
+- author, copyright, contact info
+
+Ex.
+
+.html
+
+    <header style="background-color: yellowgreen;">
+        <h1>Welcome to Website</h1>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Products</a>
+        <a href="">Contact Us</a>
+        <hr>
+    </header>
+
+    <main>
+        <h4>Main section</h4>
+        <image src="image.jpg" alt="image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci maxime inventore iste, amet
+                reprehenderit dicta aperiam, dolorem rem soluta dignissimos quod perferendis aliquid earum tempore quos
+                facilis tenetur explicabo! Quaerat!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci maxime inventore iste, amet
+                reprehenderit dicta aperiam, dolorem rem soluta dignissimos quod perferendis aliquid earum tempore quos
+                facilis tenetur explicabo! Quaerat!</p>
+                
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci maxime inventore iste, amet
+                reprehenderit dicta aperiam, dolorem rem soluta dignissimos quod perferendis aliquid earum tempore quos
+                facilis tenetur explicabo! Quaerat!</p>
+    </main>
+
+    <footer style="background-color: burlywood;">
+        <hr>
+        author: developer<br>
+        &copy; copyright reserved<br>
+        <small><a href="mailto:developer@test.com">developer@test.com</a></small>
+    </footer>    

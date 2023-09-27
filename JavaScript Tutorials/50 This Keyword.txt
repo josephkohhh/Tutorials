@@ -1,0 +1,21 @@
+This Keyword
+
+It references to a particular object. The object depends on the immediate context.
+
+Ex. 
+
+.js
+  
+const car1 = {
+    model: "Mustang",
+    color: "red",
+    year: 2018,
+
+    drive: function () {
+        console.log(`You drive the ${this.model}`); //car1.model
+    },
+}
+
+car1.drive();
+
+

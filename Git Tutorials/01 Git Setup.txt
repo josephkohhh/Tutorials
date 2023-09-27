@@ -1,0 +1,16 @@
+Git Setup
+
+Open terminal 
+- git config --global user.name "your_name"
+- git config --global user.email "your_email"
+
+Set up github 
+- create a github account
+- create a repo 
+- upload files to repo
+- open vscode
+- clone repo
+- enter url 
+- choose filepath
+
+

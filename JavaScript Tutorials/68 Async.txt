@@ -1,0 +1,22 @@
+Async
+
+Makes a function return a promise
+
+Ex.
+	
+.js
+
+async function loadFile() {
+    let fileLoaded = false;
+
+    if (fileLoaded) {
+        return "File Loaded...";
+    }
+    else {
+        return "File not loaded...";
+    }
+}
+
+loadFile().then(value => console.log(value))
+          .catch(error => console.log(error));
+

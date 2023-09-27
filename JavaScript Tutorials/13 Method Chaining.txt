@@ -1,0 +1,18 @@
+Method Chaining
+
+It allows calling one method after another in one continuous line of code 
+
+
+Ex.
+
+.js
+
+let noun = "Brother";
+let letter = noun.charAt(0);
+letter = letter.toUpperCase();
+console.log(letter);
+
+//Using method chaining
+letter = noun.charAt(0).toUpperCase();
+console.log(letter);
+
