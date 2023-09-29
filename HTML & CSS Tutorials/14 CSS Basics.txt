@@ -1,0 +1,38 @@
+What is CSS?
+
+Cascading Style Sheet is provide style to the webpage
+- inline (style to inline code)
+- internal (style to the html file)
+- external (a css file)
+
+Ex. 
+
+.html
+
+ <h1>This is my website</h1>
+
+    <p id="p1" class="odd">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, corporis! Necessitatibus dolorum asperiores facere exercitationem nostrum.</p>
+    <p id="p2" class="even">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, corporis! Necessitatibus dolorum asperiores facere exercitationem nostrum.</p>
+    <p id="p3" class="odd">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, corporis! Necessitatibus dolorum asperiores facere exercitationem nostrum.</p>
+    <p id="p4" class="even">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, corporis! Necessitatibus dolorum asperiores facere exercitationem nostrum.</p>
+
+.css (external)
+
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+}
+#p1{
+    color:red;
+}
+#p2{
+    color:orange;
+}
+#p3{
+    color:yellow;
+}
+#p4{
+    color:green;
+}

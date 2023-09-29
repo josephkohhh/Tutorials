@@ -1,0 +1,35 @@
+CSS Fonts
+
+- basic fonts 
+- use google fonts api 
+- download fonts from google fonts, store in folder and call it using @font-face 
+
+Ex. 
+
+.html
+
+<h1>Bro Code</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus error ut rerum adipisci nisi quisquam eius in tenetur vel, ipsum, eos ducimus, minus illum delectus voluptate voluptatibus dolore sit laborum!</p>
+
+.css 
+
+@font-face {
+    src: url(fonts/Roboto-Light.ttf);
+    font-family: Roboto-Light;
+}
+
+@font-face {
+    src: url(fonts/OpenSans-VariableFont_wdth,wght.ttf);
+    font-family: OpenSans;
+}
+
+h1 {
+    font-family: Roboto-Light, verdana, arial;
+}
+
+p {
+    font-family: OpenSans, "lucida console", "courier new";
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}

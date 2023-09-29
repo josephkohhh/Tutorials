@@ -1,0 +1,25 @@
+CSS Borders
+
+
+
+Ex. 
+
+.html
+
+    <h1>Website Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a nobis laborum officiis provident eos doloribus, harum explicabo iure! Beatae aut odio qui possimus magnam esse. Magnam minus quaerat nostrum.</p>
+
+.css 
+
+h1 {
+    border: 3px solid hsl(262, 100%, 56%);
+    border-radius: 20px;
+}
+
+p {
+    border-bottom: 3px solid red;
+    border-top: 3px solid orange;
+    border-left: 3px dotted yellow;
+    border-right: 3px dotted green;
+    border-radius: 10px;
+}

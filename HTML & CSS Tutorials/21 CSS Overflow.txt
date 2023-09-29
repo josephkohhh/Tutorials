@@ -1,0 +1,27 @@
+CSS Overflow
+
+A property that sets the overflow behaviour when content does not fit in the
+parent element box (overflows)
+overflow: visible
+overflow: hidden
+overflow: clip
+overflow: scroll
+overflow: auto
+
+Ex. 
+
+.html
+
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam omnis ratione voluptas earum quo
+            reiciendis, natus et est hic nobis magni architecto facilis soluta exercitationem officia? Nisi, voluptatum!
+            Ipsam, iure?</p>
+    </div>
+
+.css 
+
+div {
+    border: 2px solid;
+    height: 75px;
+    overflow: auto;
+}

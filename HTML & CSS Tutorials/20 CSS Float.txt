@@ -1,0 +1,50 @@
+CSS Float
+
+Float allows other elements to flow around it
+
+Ex. 
+
+.html
+
+    <img id="img1" src="pokeball.png" height="150px" width="150px">
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+
+    <img id="img2" src="pokeball.png" height="150px" width="150px">
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore ea, soluta alias molestiae sunt ab, quibusdam
+        minima, praesentium doloremque placeat quasi illum pariatur consequuntur corrupti! Voluptates dolor amet soluta!
+        Quibusdam!</p>
+
+.css 
+
+body {
+    border: 3px solid;
+    display: flow-root;
+}
+
+#img1 {
+    float: left;
+    margin-right: 10px;
+}
+
+#img2 {
+    float: right;
+    margin-left: 10px;
+}
+
+*Use flow-root when element is overflowing out of the main body

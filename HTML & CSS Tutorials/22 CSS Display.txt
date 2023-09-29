@@ -1,0 +1,30 @@
+CSS Display
+
+A property that specifies if/how an element is displayed
+- block (h1, div, p, form, header, footer)
+- inline (span, a, img)
+- inline-block (alike to inline but able to apply width and height)
+- none (erase the element)
+
+Ex. 
+
+.html
+
+    <div>div</div>
+    <span>span</span>
+
+.css 
+
+div {
+    background-color: hsl(0, 100%, 75%);
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+span {
+    background-color: hsl(204, 100%, 75%);
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}

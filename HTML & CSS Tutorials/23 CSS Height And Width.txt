@@ -1,0 +1,40 @@
+CSS Height & Width
+
+
+Ex.
+
+.html
+
+    <div class="container">
+        <div class="box">
+            <h2>This is #1</h2>
+
+        </div>
+        <div class="box">
+            <h2>This is #2</h2>
+
+        </div>
+    </div>
+
+.css
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(197, 137, 253);
+    height: 100vh;
+}
+
+.box {
+    background-color: rgb(248, 208, 160);
+    border: 2px solid;
+    padding: 25px;
+    height: auto;
+    width: 50%;
+    float: left;
+    text-align: center;
+
+    min-height: 50%;
+}

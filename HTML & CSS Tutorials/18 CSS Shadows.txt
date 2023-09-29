@@ -1,0 +1,23 @@
+CSS Shadows
+
+
+
+Ex. 
+
+.html
+
+    <h1>Website Title</h1>
+    <div id="box1"></div>
+
+.css 
+
+h1 {
+    text-shadow: -5px -5px 2px hsl(197, 100%, 61%), 5px 5px 2px hsl(0, 100%, 61%);
+}
+
+#box1 {
+    width: 100px;
+    height: 100px;
+    background-color: hsl(0, 0%, 92%);
+    box-shadow: 3px 3px 5px;
+}
