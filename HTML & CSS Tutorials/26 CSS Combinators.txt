@@ -1,0 +1,33 @@
+CSS Combinators
+
+It is used to explain the relationship between listed selectors
+  = descendant
+> = child
+~ = general sibling
++ = adjacent sibling (next direct sibling)
+
+Ex.
+
+.html
+
+    <div id="container">
+        <p>This is #1</p>
+        <p>This is #2</p>
+        <div>
+            <p>This is #3</p>
+        </div>
+    </div>
+
+        <p>This is #4</p>
+        <p>This is #5</p>
+
+.css
+
+#container{
+    border: 2px solid;
+}
+
+#container + p{
+    background-color: aqua;
+}
+

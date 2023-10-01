@@ -1,0 +1,24 @@
+CSS Pseudo-Classes
+
+They are keywords added to a selector and modify the behaviour of an element when they are at
+a certain state
+
+Ex.
+
+.html
+
+     <div id="greeting">Hover here
+        <p>Hello</p>
+    </div>
+
+.css
+
+#greeting p {
+    background-color: hsl(196, 100%, 81%);
+    padding: 10px;
+    display: none;
+}
+
+#greeting:hover p {
+    display: block;
+}

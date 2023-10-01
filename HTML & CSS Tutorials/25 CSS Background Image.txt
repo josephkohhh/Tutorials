@@ -1,0 +1,21 @@
+CSS Background Image
+
+
+
+Ex.
+
+.html
+
+   <h1>Hello</h1>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, laboriosam. Quasi voluptate, consequuntur quo atque ipsum vitae saepe necessitatibus debitis eius numquam minima quam laudantium, quis tempora molestias tenetur velit.</p>
+
+.css
+
+body{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
