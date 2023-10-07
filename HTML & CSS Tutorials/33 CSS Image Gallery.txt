@@ -1,0 +1,49 @@
+CSS Image Gallery
+
+
+
+Ex.
+
+.html
+
+ <div class="gallery">
+        <a target="_blank" href="images/salad.jpg">
+            <img src="images/salad.jpg" alt="salad">
+        </a>
+        <div class="description">Salads</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="images/soup.jpg">
+            <img src="images/soup.jpg" alt="soup">
+        </a>
+        <div class="description">Soups</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="images/pizza.jpg">
+            <img src="images/pizza.jpg" alt="pizza">
+        </a>
+        <div class="description">Pizzas</div>
+    </div>
+
+
+.css
+
+.gallery{
+    display: inline-block;
+    border: 1px solid hsl(0, 0%, 60%);
+    margin: 5px;
+    width: 200px;
+}
+.gallery .description{
+    padding: 10px;
+    text-align: center;
+}
+.gallery:hover{
+    border: 1px solid hsl(0, 0%, 20%);
+}
+.gallery img{
+    width: 100%;
+    height: auto;
+}

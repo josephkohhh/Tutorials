@@ -1,0 +1,112 @@
+CSS Basic Website Layout
+
+Semantic tags are used to keep your content organized
+- better for SEO
+- assist screen readers and other tech for accessibility
+
+<header> - introductory content
+<nav> - navigation bar, links
+<main> - main content (section, aside, article, div)
+- <section> - dependent content
+- <aside> - side content
+- <article> independent content
+<footer> - closing content
+
+Ex.
+
+.html
+
+ <header>
+        <h2>Header</h2>
+    </header>
+
+    <nav class="navbar"></nav>
+
+    <main>
+        <aside>
+            <h2>This is aside</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iusto tenetur consequatur. Eum amet
+                ut deleniti accusantium veritatis consequatur error dolore eaque labore cum. Aliquam odio dolores
+                reiciendis ipsam optio.</p>
+        </aside>
+        <section>
+            <h2>This is section</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iusto tenetur consequatur. Eum amet
+                ut deleniti accusantium veritatis consequatur error dolore eaque labore cum. Aliquam odio dolores
+                reiciendis ipsam optio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iusto tenetur consequatur. Eum amet
+                ut deleniti accusantium veritatis consequatur error dolore eaque labore cum. Aliquam odio dolores
+                reiciendis ipsam optio.</p>
+        </section>
+        <article>
+            <h2>This is an article</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iusto tenetur consequatur. Eum amet
+                ut deleniti accusantium veritatis consequatur error dolore eaque labore cum. Aliquam odio dolores
+                reiciendis ipsam optio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iusto tenetur consequatur. Eum amet
+                ut deleniti accusantium veritatis consequatur error dolore eaque labore cum. Aliquam odio dolores
+                reiciendis ipsam optio.</p>
+        </article>
+        <div></div>
+    </main>
+
+    <footer>
+        <h2>This is a footer</h2>
+    </footer>
+
+.css
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(206, 206, 206);
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar {
+    background-color: rgb(67, 54, 54);
+    height: 50px;
+}
+
+aside {
+    width: 20%;
+    float: left;
+    padding: 25px;
+}
+
+section {
+    width: 40%;
+    float: left;
+    padding: 25px;
+
+}
+
+article {
+    width: 40%;
+    float: left;
+    padding: 25px;
+}
+
+footer {
+    display: block;
+    clear: both;
+    background-color: rgb(206, 206, 206);
+    text-align: center;
+    padding: 25px;
+}
+
+@media screen and (max-width:600px) {
+
+    aside,
+    section,
+    article {
+        width: 100%;
+    }
+}

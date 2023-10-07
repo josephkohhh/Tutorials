@@ -1,0 +1,63 @@
+CSS Navigation Bar
+
+
+
+Ex.
+
+.html
+
+ <h1>Hello World</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h3>This is homepage</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam fugit rem repudiandae, optio, sequi tenetur
+            deleniti ducimus, sint ipsa nesciunt id quibusdam adipisci! Rerum architecto totam, aliquid fugit libero
+            sit.</p>
+    </main>
+
+.css
+
+body {
+    margin: 0px;
+}
+
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: darkcyan;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: rgb(2, 99, 99);
+}
+
+.navbar li {
+    float: left;
+}

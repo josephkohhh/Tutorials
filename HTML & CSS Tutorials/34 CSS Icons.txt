@@ -1,0 +1,65 @@
+CSS Icons
+
+Create icons using fontawsome
+
+Ex.
+
+.html
+
+    <div class="icons">
+        <a href="">
+            <i class="fa-sharp fa-solid fa-house fa-5x"></i>
+        </a>
+        <a href="https://twitter.com">
+            <i class="fa-brands fa-twitter fa-5x"></i>
+        </a>
+        <a href="https://youtube.com">
+            <i class="fa-brands fa-youtube fa-5x"></i>
+        </a>
+        <a href="https://tiktok.com">
+            <i class="fa-brands fa-tiktok fa-5x"></i>
+        </a>
+    </div>
+
+.css
+
+.icons {
+    text-align: center;
+}
+
+.icons a {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.fa-sharp.fa-solid.fa-house.fa-5x {
+    color: blueviolet;
+}
+
+.fa-sharp.fa-solid.fa-house.fa-5x:hover {
+    color: rgb(66, 21, 109);
+}
+
+.fa-brands.fa-twitter.fa-5x {
+    color: skyblue;
+}
+
+.fa-brands.fa-twitter.fa-5x:hover {
+    color: rgb(31, 103, 132);
+}
+
+.fa-brands.fa-youtube.fa-5x {
+    color: red;
+}
+
+.fa-brands.fa-youtube.fa-5x:hover {
+    color: hsl(0, 79%, 33%);
+}
+
+.fa-brands.fa-tiktok.fa-5x {
+    color: black;
+}
+
+.fa-brands.fa-tiktok.fa-5x:hover {
+    color: rgb(19, 19, 19);
+}
