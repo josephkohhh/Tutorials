@@ -1,0 +1,38 @@
+CSS Transformation
+
+The transform property lets you rotate, scale, skew, or translate an element
+
+Ex.
+
+.html
+
+    <div class="box" id="box1">Hi</div>
+    <div class="box" id="box2">Hi</div>
+    <div class="box" id="box3">Hi</div>
+
+.css
+
+body {
+    margin: 0;
+}
+
+.box {
+    border: 5px solid black;
+    font-size: 13em;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    transform: translateX(100px) rotateZ(45deg) scale(0.5)
+}
+
+#box1 {
+    background-color: lightgreen;
+}
+
+#box2 {
+    background-color: rgb(245, 157, 157);
+}
+
+#box3 {
+    background-color: rgb(229, 246, 144);
+}
