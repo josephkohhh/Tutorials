@@ -1,0 +1,56 @@
+Functions
+
+===================================================================================
+
+Aggregate Functions
+SUM(), COUNT(), AVG(), MIN(), MAX(), FIRST(), LAST()
+
+===================================================================================
+
+Date Functions 
+CURRENT_TIMESTAMP,DATEADD(),DATEDIFF(),DATEFROMPARTS(),DATENAME(),DATEPART(),DAY(),
+GETDATE(),GETUTDATE(),ISDATE(),MONTH(),SYSDATETIME(),YEAR()
+
+===================================================================================
+
+String Functions 
+ASCII(),CHAR(),CHARINDEX(),CONCAT(),CONCAT+(),CONCAT_WS(),DATALENGTH(),DIFFERENCE(),
+FORMAT(),LEFT(),LEN(),LOWER(),LTRIM(),NCHAR(),PATINDEX(),QUOTENAME(),REPLACE(),
+REPLICATE(),REVERSE(),RIGHT(),RTRIM(),SOUNDEX(),SPACE(),STR(),STUFF(),SUBSTRING(),
+TRANSLATE(),TRIM(),UNICODE(),UPPER() 
+
+===================================================================================
+
+Numeric Functions 
+ROUND(),FLOOR(),CEILING(),SQUARE(),SQRT()
+
+===================================================================================
+
+System Functions 
+CAST(), CONVERT(), ISNULL(), NULLIF()
+
+CONVERT is SQL Server specific, CAST is ANSI.
+CONVERT is more flexible in that you can format dates, etc. 
+Other than that, they are pretty much the same. 
+If you don't care about the extended features, use CAST.
+
+The CAST function is often used to preserve decimal values and places while converting them into integers. 
+The function can also truncate the decimal value if needed. The CONVERT function cannot perform this task
+
+
+ISNULL(expression,replacement) 
+The ISNULL() function returns a specified value aka replacement if the expression is NULL.
+If the expression is NOT NULL, this function returns the expression.
+
+ISNULL(expression,'') = '' 
+if the expression is NULL then return '' and if '' = '' then ... 
+
+ISNULL(expression,'') = '' / NULLIF(expression,'') IS NULL  
+
+===================================================================================
+
+Windows Functions 
+ROW_NUMBER(), RANK(), DENSE_RANK() 
+
+===================================================================================
+

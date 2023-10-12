@@ -1,0 +1,32 @@
+Duplicate Table
+
+===================================================================================
+
+If you want to duplicate the table with all its constraints & keys follows this below steps:
+
+1. Open the database in SQL Management Studio.
+2. Right-click on the table that you want to duplicate.
+3. Select Script Table as -> Create to -> New Query Editor Window. This will generate a script to recreate the table in a new query window.
+4. Change the table name and relative keys & constraints in the script.
+5. Execute the script.
+
+Then for copying data run this below script:
+
+SET IDENTITY_INSERT DuplicateTable ON
+
+INSERT Into DuplicateTable ([Column1], [Column2], [Column3], [Column4],... ) 
+SELECT [Column1], [Column2], [Column3], [Column4],... FROM MainTable
+
+SET IDENTITY_INSERT DuplicateTable OFF
+
+===================================================================================
+
+If you dont want to duplicate the table with all its constraints & keys follows this below steps:
+
+SELECT 
+    select_list
+INTO 
+    destination
+FROM 
+    source
+[WHERE condition]

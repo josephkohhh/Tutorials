@@ -1,0 +1,38 @@
+Indexes
+
+For tables without clustered index, SQL Server stores its rows in an unordered structure called a Heap.
+Using this structure, if we are querying for a specific column data (ex.age=10), we have to scan 
+every single row of the table to get the match. However, this is not very efficient
+
+Indexes are special data structures associated with tables or views that help speed up the query 
+SQL Server provides two types of indexes: Clustered index and Non-clustered index
+
+===================================================================================
+
+Clustered Index 
+- Stores data rows in a sorted structure based on its key values
+- Each table has only one clustered index because data rows can be only sorted in one order
+- A table that has a clustered index is called a clustered table
+
+===================================================================================
+
+Non-Clustered Index 
+- Sorts and stores data separately from the data rows in the table
+- It is a copy of selected columns of data from a table with the links to the associated table
+- A table may have one or more nonclustered indexes and each non-clustered index may include one or more columns of the table
+
+===================================================================================
+
+Managing Indexes in SQL Server:
+Clustered indexes - CREATE CLUSTERED INDEX index_name ON schema_name.table_name (column_list)
+Non-clustered indexes - CREATE [NONCLUSTERED] INDEX index_name ON table_name (column_list)
+Rename indexes 
+Disable indexes
+Enable indexes
+Unique indexes - ensures the clustered/non-clustered index key columns do not contain any duplicate values
+Drop indexes 
+Indexes with included columns 
+Filtered indexes
+Indexes on computed columns
+
+===================================================================================

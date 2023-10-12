@@ -1,0 +1,32 @@
+4 SQL Command Categories 
+
+===================================================================================
+
+1. Data Definition Language (DDL)
+
+Consists of commands used to define the schema 
+- CREATE, ALTER, DROP, RENAME, TRUNCATE, COMMENT 
+
+===================================================================================
+
+2. Data Manipulation Language (DML)
+
+Deals with manipulation of data present in database
+- SELECT, INSERT, UPDATE, DELETE, MERGE, CALL, EXPLAIN PLAN, LOCK TABLE 
+
+===================================================================================
+
+3. Data Control Language (DCL)
+
+Deals with the rights, permissions and controls of the database systen
+- GRANT, REVOKE
+
+===================================================================================
+
+4. Transactional Control Language (TCL)  
+
+Consists of commands which deal with the transactions of database
+- COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION 
+
+===================================================================================
+

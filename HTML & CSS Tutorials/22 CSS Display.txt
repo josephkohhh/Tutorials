@@ -28,3 +28,9 @@ span {
     height: 100px;
     display: inline-block;
 }
+
+Note:
+- inline elements cannot have width and height properties
+- inline-block elements can have width and height properties
+- flex property requires to be at a container element, and child elements will be side by side but still considered block 
+- use inline-flex if wish to get rid of the block behaviour 

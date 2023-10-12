@@ -1,0 +1,42 @@
+Keys 
+
+===================================================================================
+
+Candidate Key
+It is an attribute or set of attributes that can uniquely identify a tuple
+
+===================================================================================
+
+Super Key
+It is an attribute set that can uniquely identify a tuple
+A super key is a superset of a candidate key
+
+===================================================================================
+
+Primary Key
+It is the first key used to identify one and only one instance of an entity uniquely
+
+===================================================================================
+
+Alternate Key
+It is a candidate key after a primary key is chosen 
+
+===================================================================================
+
+Foreign Key
+It is the column of the table used to point to the primary key of another table
+
+===================================================================================
+
+Composite Key
+Whenever a primary key consists of more than one attribute, it is known as a composite key
+This key is also known as Concatenated Key
+
+===================================================================================
+
+Artifical Key
+The key created using arbitrarily assigned data are known as artificial keys. 
+These keys are created when a primary key is large and complex and has no relationship with many other relations. 
+The data values of the artificial keys are usually numbered in a serial order
+
+===================================================================================

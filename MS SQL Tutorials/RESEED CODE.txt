@@ -1,0 +1,11 @@
+DBCC CHECKIDENT ('Table_Name', RESEED, 1) 
+DBCC CHECKIDENT ('Table_Name', RESEED) 
+
+==========================================
+
+-- Reset to next ID available
+declare @max int
+select @max=max([Id]) from [TestTable]
+if @max IS NULL   --check when max is returned as null
+  SET @max = 0
+DBCC CHECKIDENT ('[TestTable]', RESEED, @max) 

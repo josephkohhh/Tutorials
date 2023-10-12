@@ -1,0 +1,18 @@
+Instance Name
+SQLEXPRESS 
+Connection String: Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+
+SQL Adminstrators 
+DESKTOP-2SH0K9O\Admin 
+SQL Server Install Log folder: C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20220415_113122
+
+Features Installed
+SQL Engine
+Installation Media Folder: C:\SQL2019\Express_ENU
+
+Version
+15.0.2000.5, RTM
+Installation Resources Folder: C:\Program Files\Microsoft SQL Server\150\SSEI\Resources
+
+
+

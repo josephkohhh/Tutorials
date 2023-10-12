@@ -1,0 +1,166 @@
+                        |
+                    \       /
+                      .-"-.
+                 --  /     \  --
+`~~^~^~^~^~^~^~^~^~^-=======-~^~^~^~~^~^~^~^~^~^~^~`
+`~^_~^~^~-~^_~^~^_~-=========- -~^~^~^-~^~^_~^~^~^~`
+`~^~-~~^~^~-^~^_~^~~ -=====- ~^~^~-~^~_~^~^~~^~-~^~`
+`~^~^~-~^~~^~-~^~~-~^~^~-~^~~^-~^~^~^-~^~^~^~^~~^~-`
+
+SQL Server
+
+===================================================================================
+
+Section 1: Querying data
+SELECT
+
+FROM -> SELECT 
+FROM -> WHERE -> SELECT
+FROM -> WHERE -> SELECT -> ORDER BY 
+FROM -> WHERE -> GROUP BY -> SELECT -> ORDER BY
+FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+
+===================================================================================
+
+Section 2: Sorting data 
+ORDER BY - asc, desc
+
+===================================================================================
+
+Section 3: Limiting rows 
+OFFSET FETCH 
+SELECT TOP 
+
+===================================================================================
+
+Section 4: Filtering data
+DISTINCT 
+WHERE 
+AND  
+OR 
+IN 
+BETWEEN 
+LIKE  
+Column & Table aliases  
+
+===================================================================================
+
+Section 5: Joining tables
+INNER JOIN 
+LEFT JOIN
+RIGHT JOIN
+FULL OUTER JOIN
+CROSS JOIN 
+SELF JOIN
+
+===================================================================================
+
+Section 6: Grouping data
+GROUP BY
+HAVING - search condition for a group or an aggregate
+GROUPING SETS
+CUBE - create all possible grouping sets 
+ROLLUP - create hierachical grouping sets - often used to generate subtotals and totals for reporting purposes
+
+===================================================================================
+
+Section 7: Subquery
+Subquery - select (subquery), from (subquery), where (subquery)
+Correlated subquery - a subquery that uses the values of the outer query
+EXISTS - (WHERE EXISTS) to check if subquery have result = true else false 
+ANY/SOME 
+ALL 
+
+===================================================================================
+
+Section 8: Set Operators
+UNION - combine 2 select statements into a single result set without duplicates 
+INTERSECT - combine 2 select statements and return common rows 
+EXCEPT - returns any distinct values from the query left of the EXCEPT operator
+
+===================================================================================
+
+Section 9: Common Table Expression (CTE)
+CTE - use common table expresssions to make complex queries more readable
+Recursive CTE - query hierarchical data using recursive CTE
+
+===================================================================================
+
+Section 10: Pivot
+PIVOT - convert rows to columns
+
+===================================================================================
+
+Section 11. Modifying data using DML
+INSERT 
+INSERT multiple rows 
+INSERT INTO SELECT - insert data into a table from the result of a query *will not create a table*
+UPDATE
+UPDATE JOIN 
+DELETE 
+MERGE 
+Transaction
+
+===================================================================================
+
+Section 12. Data definition using DDL 
+CREATE DATABASE 
+DROP DATABASE
+CREATE SCHEMA 
+ALTER SCHEMA 
+DROP SCHEMA
+CREATE TABLE 
+Identity column - default value is identity(1,1)
+Sequence 
+ALTER TABLE ADD column - ADD column_name data_type column_constraint
+ALTER TABLE ALTER COLUMN - able to modify the data type, change the size, add a NOT NULL constraint
+ALTER TABLE DROP COLUMN - drop constraint if any first then able to drop column else error 
+ALTER TABLE DROP CONSTRAINT 
+ALTER TABLE ADD CONSTRAINT 
+Computed columns - persisted property when column is deterministic 
+DROP TABLE 
+TRUNCATE TABLE 
+SELECT INTO 
+Rename a table
+Temporary tables - #table_name and ##table_name 
+Synonym - create synonyms for database objects
+
+===================================================================================
+
+Section 13. SQL Server Data Types
+BIT
+INT - bigint, int, smallint, tinyint 
+DECIMAL - numeric(p,s) is same as decimal(p,s)/dec((p,s))
+CHAR
+NCHAR
+VARCHAR - non-unicode character string
+NVARCHAR - unicode character string
+DATETIME2 - more precision than DATETIME
+DATE
+TIME
+DATETIMEOFFSET - a representation of instantaneous time
+GUID - 128-bit text string that represents an identification
+
+===================================================================================
+
+Section 14. Constraints
+Primary key - combination of NOT NULL and UNIQUE constraint 
+Foreign key
+NOT NULL constraint 
+UNIQUE constraint 
+CHECK constraint
+
+===================================================================================
+
+Section 15. Expressions
+CASE - if-else logic to SQL queries
+COALESCE - COALESCE can have multiple expressions, in ISNULL can check only one expression
+NULLIF - returns null if expression 1 matches expression 2 
+
+===================================================================================
+
+Section 16. Useful Tips
+Find duplicates - Use CTE and select inner join maintable with CTE 
+Delete duplicates - Use CTE with row_number() and delete where row_num > 1
+
+===================================================================================

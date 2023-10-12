@@ -4,7 +4,11 @@ It is a document object model (API)
 - an interface for changing the content of the page
 
 Ex.
-	
+
+.html
+
+   <div id="myLabel"></div>
+
 .js
 
 console.log(document);

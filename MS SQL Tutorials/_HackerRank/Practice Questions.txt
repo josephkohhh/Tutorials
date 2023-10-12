@@ -1,0 +1,47 @@
+To practice: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Basic Select: 
+
+Weather Observation Station 5
+Weather Observation Station 11
+Higher Than 75 Marks
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Advanced Select:
+
+Type of Triangle
+The PADS
+New Companies
+Binary Tree Nodes
+Occupations
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aggregation: 
+
+The Blunder
+Top Earners
+Weather Observation Station 15
+Weather Observation Station 16
+Weather Observation Station 18
+Weather Observation Station 19
+Weather Observation Station 20
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Basic Join:
+
+Population Census
+African Cities
+Average Population of Each Continent
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Advanced Join:
+
+Placements
+Symmetric Pairs
+SQL Project Planning

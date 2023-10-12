@@ -1,6 +1,6 @@
 CSS Flexbox
 
-
+It is use to make elements side by side while having block behaviour
 
 Ex.
 
@@ -43,3 +43,14 @@ Ex.
 #box4 {
     background-color: hsl(201, 100%, 70%);
 }
+
+Note:
+- justify-content is to control main-axis	
+- align-items is to control cross-axis
+- flex-direction
+  - row (main-axis is horizontal by default)
+  - column (main-axis becomes cross-axis)
+- flex-wrap
+  - wrap (when no more space, elements will not squeeze but be carried down)
+- align-content is usable after using flex-wrap: wrap to deal with spacings
+- gap is to leave space between flex elements

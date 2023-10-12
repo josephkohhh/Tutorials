@@ -1,0 +1,205 @@
+Solution: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Basic Select: 
+
+Weather Observation Station 5
+Weather Observation Station 11
+Higher Than 75 Marks
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Advanced Select:
+
+Type of Triangle
+
+SELECT CASE             
+            WHEN A + B > C AND B + C > A AND A + C > B THEN
+                CASE 
+                    WHEN A = B AND B = C THEN 'Equilateral'
+                    WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+                    ELSE 'Scalene'
+                END
+            ELSE 'Not A Triangle'
+        END
+FROM TRIANGLES;
+
+The PADS
+
+select concat(name,'(',left(occupation,1),')') from occupations order by name 
+
+select concat('There are a total of ',count(occupation),' ',lower(occupation),'s.') from occupations group by occupation
+order by count(occupation), occupation
+
+New Companies
+
+select company_code, founder,
+(select count(distinct lead_manager_code) from Lead_Manager where company_code=c.company_code),
+(select count(distinct senior_manager_code) from Senior_Manager where company_code=c.company_code),
+(select count(distinct manager_code) from Manager where company_code=c.company_code),
+(select count(distinct employee_code) from Employee where company_code=c.company_code)
+from Company c
+order by company_code;
+---  
+select c.company_code, 
+    c.founder, 
+    count(distinct e.lead_manager_code), 
+    count(distinct e.senior_manager_code), 
+    count(distinct e.manager_code), 
+    count(distinct e.employee_code)
+from company c
+    inner join employee e on e.company_code = c.company_code
+group by c.company_code,c.founder
+order by c.company_code;
+
+Binary Tree Nodes
+
+SELECT n,
+    CASE
+        WHEN p IS NULL THEN 'Root'
+        WHEN n IN (SELECT DISTINCT p FROM bst) THEN 'Inner'
+        ELSE 'Leaf'
+    END as node_type
+FROM bst 
+ORDER BY n;
+
+Occupations
+
+select  
+[Doctor], [Professor], [Singer], [Actor]
+from (
+select 
+name, occupation, row_number() over (partition by occupation order by name) as row_num
+from occupations
+) as temp_table
+PIVOT(
+	min(name)
+	for occupation IN ([Doctor], [Professor], [Singer], [Actor]) 
+) as pivot_table;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aggregation: 
+
+The Blunder
+
+SELECT cast(ceiling(avg(cast(salary as float)) - avg(cast(replace(salary,0,'')as float))) as int) FROM EMPLOYEES;
+---
+select ceiling(avg(cast(salary as dec(9,4))) - avg(cast(replace(salary,0,'')as dec(9,4)))) from employees 
+
+Top Earners
+
+select top 1 (salary*months) as max_salary , count(salary*months) as count from employee
+group by (salary*months)
+order by max_salary desc 
+
+Weather Observation Station 15
+
+select top 1 cast(long_w as decimal(8,4)) from station where lat_n < 137.2345 order by lat_n desc
+
+Weather Observation Station 16
+
+select cast(min(lat_n) as decimal (20,4)) from station where LAT_N > 38.7780;
+
+Weather Observation Station 18
+
+select cast((max(lat_n) - min(lat_n)) + (max(long_w) - min(long_w)) as decimal(10,4)) from station 
+
+Weather Observation Station 19
+
+select CAST(SQRT(square(max(lat_n) - min(lat_n)) + square(max(long_w) - min(long_w)))AS DECIMAL (10,4)) as Euclidean_Distance from station
+
+Weather Observation Station 20
+
+SELECT DISTINCT
+CAST (
+(
+ (SELECT MAX(LAT_N) FROM
+   (SELECT TOP 50 PERCENT LAT_N FROM STATION ORDER BY LAT_N ASC) AS FirstHalf)
+ +
+ (SELECT MIN(LAT_N) FROM
+   (SELECT TOP 50 PERCENT LAT_N FROM STATION ORDER BY LAT_N DESC) AS SecondHalf)
+) / 2  AS DECIMAL(10,4))
+FROM STATION 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Basic Join:
+
+Population Census
+
+select sum(c.population) from city c 
+inner join Country cty on c.countrycode = cty.code
+where cty.continent = 'Asia'
+
+African Cities
+
+select c.name from city c 
+inner join country cty on c.countrycode = cty.code
+where cty.continent = 'Africa'
+
+Average Population of Each Continent
+
+select cty.continent, floor(avg(c.population)) from country cty 
+inner join city c on cty.code = c.countrycode 
+group by cty.continent 
+---
+select 
+continent,
+(select floor(avg(population)) from city )
+from country 
+where code in (select countrycode from city)
+group by continent
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Advanced Join:
+
+Placements
+
+SELECT S.Name
+FROM Students S 
+INNER JOIN Friends F ON S.ID = F.ID
+INNER JOIN Packages P ON P.ID = S.ID
+INNER JOIN Packages PF ON PF.ID = F.Friend_ID AND P.Salary < PF.Salary 
+ORDER BY PF.Salary  
+
+Symmetric Pairs
+
+with cte_functions as (
+select 
+x,
+y,
+row_number() over (order by x) as row_num
+from functions
+)
+Select distinct
+f1.x,
+f1.y
+from cte_functions f1 join cte_functions f2
+on f1.x = f2.y and f2.x = f1.y and f1.row_num != f2.row_num and f1.x<=f1.y
+order by f1.x
+
+SQL Project Planning
+
+--if start_date not in end_date = start_date is start date of new project 
+--if end_date not in start_date = end_date is end date of project
+
+SELECT 
+T1.Start_Date,
+T2.End_Date 
+FROM 
+(SELECT 
+Start_Date,
+ROW_NUMBER() OVER (ORDER BY Start_Date) as row_num 
+FROM Projects 
+WHERE Start_Date NOT IN (SELECT END_Date FROM Projects) 
+) AS T1 
+INNER JOIN 
+(SELECT End_Date,ROW_NUMBER() OVER (ORDER BY End_Date) as row_num 
+FROM Projects 
+WHERE End_Date NOT IN (SELECT Start_Date FROM Projects)
+) AS T2 
+ON T1.row_num = T2.row_num 
+ORDER BY DATEDIFF(Day,T1.Start_Date,T2.End_Date),T1.Start_Date

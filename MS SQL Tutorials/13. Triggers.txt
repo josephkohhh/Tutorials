@@ -1,0 +1,56 @@
+Triggers 
+
+SQL Server Triggers are special stored procedures that are executed automatically in response to the server events, database object 
+and database 
+
+===================================================================================
+
+SQL Server provides 3 types of triggers:
+
+- Data definition language (DDL) triggers -> fire in response to CREATE, ALTER, and DROP statements 
+  (DDL triggers also fire in response to some system stored procedures that perform DDL-like operations)
+  - CREATE, ALTER, DROP -> DDL COMMAND -> DDL TRIGGER
+
+- Data Manipulation Language (DML) triggers -> invoked automatically in response to INSERT, UPDATE, and DELETE events against tables
+  - INSERT, UPDATE, DELETE -> DML COMMAND -> DML TRIGGER 
+
+- Logon triggers which fire in response to LOGON events
+
+===================================================================================
+
+DDL Trigger Syntax: (Database level trigger folder)
+
+CREATE TRIGGER trigger_name
+ON { DATABASE | ALL SERVER}
+[WITH ddl_trigger_option]
+FOR {event_type | event_group }
+AS {sql_statement}
+
+===================================================================================
+
+DML Trigger Syntax: (table level trigger folder)
+
+CREATE TRIGGER [schema_name].trigger_name
+ON table_name
+FOR | AFTER  {[INSERT],[UPDATE],[DELETE]}
+[NOT FOR REPLICATION]
+AS
+{sql_statements}
+
+===================================================================================
+
+“Virtual” tables for triggers: INSERTED and DELETED
+
+===================================================================================
+
+List All Triggers Syntax:  
+
+SELECT * FROM sys.triggers
+
+===================================================================================
+
+Remove Triggers Syntax: 
+
+DROP TRIGGER trigger_name
+
+===================================================================================

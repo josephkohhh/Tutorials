@@ -1,0 +1,35 @@
+What is Sequel Language (SQL)?
+
+A standardized programming language which is used for managing relational databases
+
+With SQL:
+-you can modify databases, add, update or delete rows of data, retrieve 
+ subsets of information from a database and many more 
+
+-Queries and other SQL operations are written as statements. Ex: select, insert,
+ add, update, delete, create, alter, truncate 
+
+===================================================================================
+
+What is SQL Server? 
+
+A relational database management studio that supports SQL 
+
+Key components of SQL Server:
+-Database Engine 
+-SQL Server
+-SQL Server Agent
+-SQL Server Browser
+-SQL Server Full-Text Search
+-SQL Server VSS Writer
+-SQL Server Analytics Services (SSAS)
+-SQL Server Reporting Services (SSRS)
+-SQL Server Integration Services (SSIS)
+
+===================================================================================
+
+1. Install SQL Server
+2. Connect SQL Server using SSMS
+3. Access Database Engine 
+
+===================================================================================

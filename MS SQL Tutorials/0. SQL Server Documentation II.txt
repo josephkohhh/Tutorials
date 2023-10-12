@@ -1,0 +1,447 @@
+                        |
+                    \       /
+                      .-"-.
+                 --  /     \  --
+`~~^~^~^~^~^~^~^~^~^-=======-~^~^~^~~^~^~^~^~^~^~^~`
+`~^_~^~^~-~^_~^~^_~-=========- -~^~^~^-~^~^_~^~^~^~`
+`~^~-~~^~^~-^~^_~^~~ -=====- ~^~^~-~^~_~^~^~~^~-~^~`
+`~^~^~-~^~~^~-~^~~-~^~^~-~^~~^-~^~^~^-~^~^~^~^~~^~-`
+
+SQL Server
+
+===================================================================================
+
+Views
+
+- When you use the SELECT statement to query data from one or more tables, you get a result set.
+- Next time, if you want to get the same result set, you can save this query into a text file, open it, and execute it again.
+- SQL Server provides a better way to save this query in the database catalog through a view.
+
+A view is a named query stored in the database catalog that allows you to refer to it later:
+
+CREATE VIEW [Schema].[Table] 
+AS 
+SELECT... 
+
+Advantages of Views
+- Security -> restrict users to access directly to a table and allow them to access a subset of data via views
+- Simplicity -> simplify the complex queries with joins and conditions using a set of views
+- Consistency -> you can reference the logic from the views rather than rewriting it in separate queries
+
+Managing views in SQL Server:
+Creating a new view
+Renaming a view
+Listing views in SQL Server
+Getting view information
+Removing a view
+Creating an indexed view
+
+
+*By definition, views do not store data except for indexed views
+===================================================================================
+
+Indexed View
+
+Indexed views are materialized views that stores data physically like a table hence may provide better
+query performance if they are used appropriately
+
+To create an indexed view:
+
+1. CREATE VIEW [ViewName]
+   WITH SCHEMABINDING 
+   AS 
+   SELECT... 
+
+Schemabinding prevent tables used in views to make any modifications that can affect the view's definition 
+If you want to change structure of the underlying table which affect the view's definition, you must drop
+the indexed view first before applying the changes
+
+2. CREATE UNIQUE CLUSTERED INDEX / CREATE NONCLUSTERED INDEX 
+   ucidx_column_name
+   ON [Schema].[ViewName](column_name);
+
+This materializes the view, creating a physical existence in the database
+
+UNIQUE CLUSTERED INDEX = unique column
+NONCLUSTERED INDEX = normal column
+
+===================================================================================
+
+Indexes
+
+===================================================================================
+
+Triggers
+
+===================================================================================
+
+Stored Procedure 
+
+SQL Server stored procedures are used to group one or more Transact-SQL statements into logical units. 
+The stored procedure is stored as a named object in the SQL Server Database Server.
+
+When you call a stored procedure for the first time, SQL Server creates an execution plan and stores it in the cache. 
+In the subsequent executions of the stored procedure, SQL Server reuses the plan to execute the stored procedure very fast with reliable performance.
+
+-----------------------------------------------------------------------------------
+
+Section 1. Getting started with SQL Server Stored Procedures
+
+-----------------------------------------------------------------------------------
+Stored Procedure 
+-----------------------------------------------------------------------------------
+
+Create Stored Procedure Syntax:
+
+CREATE PROCEDURE procedure_name
+AS
+BEGIN
+sql_statement
+END;
+
+-----------------------------------------------------------------------------------
+
+Executing a stored procedure:
+
+EXECUTE procedure_name;
+
+-----------------------------------------------------------------------------------
+
+Deleting a stored procedure:
+
+DROP PROCEDURE procedure_name;
+
+-----------------------------------------------------------------------------------
+Stored Procedure Syntax with Parameters
+-----------------------------------------------------------------------------------
+
+Create Stored Procedure Syntax with Parameters Syntax:
+
+CREATE PROCEDURE procedure_name(
+@parameter 1 as data_type
+@parameter 2 as data_type
+)
+AS
+BEGIN
+sql_statement
+END;
+
+*you can specify default values for parameters so that when you call stored procedures, 
+you can skip the parameters with default values
+
+Ex. 
+CREATE PROCEDURE procedure_name(
+@parameter 1 as data_type = value
+)
+AS
+BEGIN
+sql_statement
+END;
+
+EXECUTE procedure_name;
+
+-----------------------------------------------------------------------------------
+
+Executing a stored procedure with parameters:
+
+EXECUTE procedure_name @parameter1 = value, @parameter2 = value;
+
+-----------------------------------------------------------------------------------
+Variables 
+-----------------------------------------------------------------------------------
+
+A variable is an object that holds a single value of a specific type e.g., integer, date, or varying character string.
+
+We typically use variables in the following cases:
+- As a loop counter to count the number of times a loop is performed
+- To hold a value to be tested by a control-of-flow statement such as WHILE
+- To store the value returned by a stored procedure or a function
+
+-----------------------------------------------------------------------------------
+
+Declaring a variable: 
+
+DECLARE @variable data_type 
+
+*By default, when a variable is declared, its value is set to NULL
+
+-----------------------------------------------------------------------------------
+
+Assigning a value to a variable:
+
+SET @variable = value;
+
+-----------------------------------------------------------------------------------
+Output Parameters 
+-----------------------------------------------------------------------------------
+
+Create an output parameter for a stored procedure with the following syntax:
+
+parameter_name data_type OUTPUT
+
+To call a stored procedure with output parameters
+1. declare variables to hold the values returned by the output parameters
+2. Second, use these variables in the stored procedure call
+
+-----------------------------------------------------------------------------------
+
+Section 2. Control-of-flow statements
+
+-----------------------------------------------------------------------------------
+BEGIN...END
+-----------------------------------------------------------------------------------
+
+- The BEGIN...END statement is used to define a statement block
+- A statement block consists of a set of SQL statements that execute together
+- A statement block is also known as a batch
+
+BEGIN
+    { sql_statement | statement_block}
+END
+
+*Statement block can be nested
+
+-----------------------------------------------------------------------------------
+IF ELSE 
+-----------------------------------------------------------------------------------
+
+The IF...ELSE statement is a control-flow statement that allows you to execute 
+or skip a statement block based on a specified condition
+
+The following illustrates the IF ELSE statement:
+
+IF Boolean_expression
+BEGIN
+    -- Statement block executes when the Boolean expression is TRUE
+END
+ELSE
+BEGIN
+    -- Statement block executes when the Boolean expression is FALSE
+END
+
+- In this syntax, if the Boolean_expression evaluates to TRUE 
+  then the statement_block in the BEGIN...END block is executed 
+
+- Otherwise, the statement_block is skipped and the control of 
+  the program is passed to the statement after the END keyword
+
+*IF ELSE can be nested
+
+-----------------------------------------------------------------------------------
+WHILE 
+-----------------------------------------------------------------------------------
+
+The WHILE statement is a control-flow statement that allows you to execute 
+a statement block repeatedly as long as a specified condition is TRUE
+
+The following illustrates the WHILE statement:
+
+WHILE Boolean_expression   
+     { sql_statement | statement_block}  
+
+Ex. 
+DECLARE @Counter INT = 1;
+WHILE @Counter <= 10
+BEGIN
+PRINT @Counter;
+SET @Counter = @Counter + 1;
+END 
+
+*WHILE can be nested
+
+-----------------------------------------------------------------------------------
+BREAK
+-----------------------------------------------------------------------------------
+
+The BREAK statement is used to exit the current iteration of a loop
+
+The following illustrates the BREAK statement:
+
+BREAK;
+
+Ex.
+WHILE Boolean_expression1
+BEGIN
+    -- statement
+    WHILE Boolean_expression2
+    BEGIN
+        IF condition
+            BREAK;
+    END
+END
+
+-----------------------------------------------------------------------------------
+CONTINUE
+-----------------------------------------------------------------------------------
+
+The CONTINUE statement stops the current iteration of the loop and starts the new one
+
+The following illustrates the CONTINUE statement:
+
+CONTINUE;
+
+Ex.
+WHILE Boolean_expression
+BEGIN
+    -- code to be executed
+    IF condition
+        CONTINUE;
+    -- code will be skipped if the condition is met
+END
+
+-----------------------------------------------------------------------------------
+
+Section 3. Cursors
+
+-----------------------------------------------------------------------------------
+Cursors
+-----------------------------------------------------------------------------------
+
+SQL Server cursor is used to process a result set, one row at a time
+
+The following illustrates steps for using a CURSOR:
+
+1. Declare a cursor:
+
+   DECLARE cursor_name CURSOR
+    FOR select_statement;
+  
+2. Open a cursor:  
+  
+   OPEN cursor_name;
+
+3. Fetch 1st row from the cursor into 1 or more variables:
+
+   FETCH NEXT FROM cursor INTO variable_list;
+
+4. Use WHILE statement to fetch all rows from the cursor:
+
+   WHILE @@FETCH_STATUS = 0  
+    BEGIN
+        FETCH NEXT FROM cursor_name;  
+    END;
+
+5. Close cursor:
+
+   CLOSE cursor_name;
+
+6. Deallocate curosr:
+
+   DEALLOCATE cursor_name;
+
+-----------------------------------------------------------------------------------
+
+Section 4. Handling Exceptions
+
+-----------------------------------------------------------------------------------
+TRY CATCH
+-----------------------------------------------------------------------------------
+
+The TRY CATCH construct allows you to gracefully handle exceptions in SQL Server
+
+The TRY CATCH construct syntax is as follows:
+
+BEGIN TRY  
+   -- statements that may cause exceptions
+END TRY  
+
+BEGIN CATCH  
+   -- statements that handle exception
+END CATCH  
+
+Inside the catch block, you can use the following functions to get the
+detailed information on the error that occurred
+- ERROR_LINE() -> returns the line number on which the exception occurred
+- ERROR_MESSAGE() -> returns the complete text of the generated error message
+- ERROR_PROCEDURE() -> returns the name of the stored procedure or trigger where the error occurred
+- ERROR_NUMBER() -> returns the number of the error that occurred
+- ERROR_SEVERITY() -> returns the severity level of the error that occurred
+- ERROR_STATE() -> returns the state number of the error that occurred
+
+*TRY CATCH construct can be nested
+
+Ex.
+
+BEGIN TRY
+    --- statements that may cause exceptions
+END TRY
+BEGIN CATCH
+    -- statements to handle exception
+    BEGIN TRY
+        --- nested TRY block
+    END TRY
+    BEGIN CATCH
+        --- nested CATCH block
+    END CATCH
+END CATCH
+
+-----------------------------------------------------------------------------------
+
+TRY CATCH with transactions 
+
+Inside a CATCH block, you can test the state of transactions by using the XACT_STATE() function
+
+ - If the XACT_STATE() function returns -1, it means that an uncommittable transaction is pending, 
+   you should issue a ROLLBACK TRANSACTION statement
+
+ - In case the XACT_STATE() function returns 1, it means that a committable transaction is pending. 
+   You can issue a COMMIT TRANSACTION statement in this case
+
+ - If the XACT_STATE() function return 0, it means no transaction is pending, therefore, 
+   you don’t need to take any action
+
+*It is a good practice to test your transaction state before issuing 
+ a COMMIT TRANSACTION or ROLLBACK TRANSACTION statement in a CATCH block to ensure consistency
+
+-----------------------------------------------------------------------------------
+RAISERROR
+-----------------------------------------------------------------------------------
+
+The RAISERROR statement is used to generate user-defined error messages
+
+-----------------------------------------------------------------------------------
+THROW
+-----------------------------------------------------------------------------------
+
+The THROW statement raises an exception and transfers execution to a CATCH block of 
+a TRY CATCH construct
+
+-----------------------------------------------------------------------------------
+
+Section 5. Dynamic SQL
+
+-----------------------------------------------------------------------------------
+Dynamic SQL
+-----------------------------------------------------------------------------------
+
+Dynamic SQL is a programming technique that enables you to build SQL statements 
+dynamically at runtime
+
+Ex.
+Using dynamic SQL to query from any table:
+
+CREATE PROC usp_query (
+    @schema NVARCHAR(128),
+    @table NVARCHAR(128)
+)
+AS
+BEGIN
+
+    DECLARE @sql NVARCHAR(MAX);
+    -- construct SQL
+    SET @sql = N'SELECT * FROM ' 
+            + QUOTENAME(@schema) 
+            + '.' 
+            + QUOTENAME(@table);
+    -- execute the SQL
+    EXEC sp_executesql @sql;
+    
+END;
+
+EXEC usp_query 'table_name';
+
+*Using quotename for any SQL server object names that are used in dynamic SQL to
+ prevent SQL injection 
+ The function is only appropriate for object names (e.g. table, column, database names)
+
+===================================================================================

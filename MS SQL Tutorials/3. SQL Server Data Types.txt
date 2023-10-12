@@ -1,0 +1,14 @@
+SQL Server Data Types 
+
+1. String 
+   - Character Strings - char, text, varchar
+   - Unicode Character Strings - nchar, ntext, nvarchar
+   - Binary Strings - binary, image, varbinary     
+
+2. Numeric
+   - Exact Numerics - int, bigint, decimal, numeric
+   - Approx Numerics - float, real 
+
+3. Date & Time - date, time, datetime, datetime2, timestamp 
+
+4. Other data types - cursor, table, xml, uniqueidentifier, sql_variant 

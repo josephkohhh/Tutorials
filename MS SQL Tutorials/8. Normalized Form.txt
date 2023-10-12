@@ -1,0 +1,30 @@
+Normalized Form
+
+===================================================================================
+
+Partial dependency-> may occur only on tables with composite key
+the non key attribute is dependent on part of the key and not the whole key
+
+Transitive dependency-> The non key attribute is dependent on another non key attribute which is in turn dependent on the key attribute
+
+===================================================================================
+
+1st NF-> 
+Primary Key
+No Multi-Value attribute
+Every column data should be of similar type
+
+===================================================================================
+
+2nd NF-> 
+Table should be in 1NF
+No partial dependency
+
+===================================================================================
+
+3rd NF-> 
+Table should be in 2NF
+No Transitive dependency
+
+===================================================================================
+
