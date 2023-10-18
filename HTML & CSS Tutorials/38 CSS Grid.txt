@@ -1,0 +1,16 @@
+CSS Grid
+
+Grid track - space between 2 parallel lines
+Grid area - space between 4 lines  
+
+Grid format:
+<main></main> - container to hold grid items
+
+Every element inside <main> is a grid item
+<header></header>
+<article></article>
+<aside></aside>
+<nav></nav>
+
+Ex.
+
