@@ -21,8 +21,3 @@ git clone https://github.com/josephkohhh/Tutorials.git
 - HTML & CSS tutorials
 - Javascript tutorials
 - MSSQL tutorials
-
-
-
-
-
