@@ -1,0 +1,30 @@
+Installing Required Tools
+
+Download Nodejs:
+https://nodejs.org/en/download
+
+Download VS Code:
+https://code.visualstudio.com/
+
+When you create a React app using Create React App (CRA), which is a popular tool for setting up React projects, 
+Node.js is required for several reasons:
+
+1. npm (Node Package Manager): CRA relies on npm for package management. npm is the default package manager for 
+   Node.js, and it is used to install, manage, and update the various dependencies that your React app might have, 
+   such as React itself, React DOM, and other tools or libraries.
+
+2. Development Server: CRA comes with a built-in development server that enables features like 
+   hot module replacement, allowing you to see changes in real-time without manually refreshing the page. 
+   The development server is powered by Node.js.
+
+3. Build Scripts: npm allows you to define custom scripts in your package.json file. 
+   CRA uses these scripts for various tasks, such as starting the development server, building the project 
+   for production, running tests, and more. Node.js is required to execute these scripts.
+
+4. Configuration and Tooling: CRA abstracts away a lot of the complex configuration for tools like 
+   Webpack and Babel, which are used for bundling and transpiling JavaScript code. These tools, along with 
+   other build tools, are installed and managed through npm and require Node.js to run
+
+5. Dependency Management: Node.js provides a runtime environment for JavaScript on the server side. 
+   While the primary use of Node.js in a CRA project is for development tools and scripts, 
+   it is part of the overall JavaScript ecosystem that enables the build and development processes.

@@ -1,0 +1,19 @@
+What is React?
+
+React is an open source Javascript library for creating user interfaces
+- Used for building user interfaces, it is not responsible for routing or making HTTP request
+- Used for handling the view layer of our application
+- Allows building web applications that changes data without reloading the webpage
+
+Why learn React?
+
+- Created and maintained by Meta
+- Simplicity. Uses JSX which allow mix of HTML with js
+- Easy to learn. Prerequiste is HTML, CSS & js
+- In demand skillset
+- Can be used in any tech stack
+- Mobile app development using React Native
+
+React is a component based architecture
+- An application can be broken down into multiple small components
+- Components allow reuse of code
