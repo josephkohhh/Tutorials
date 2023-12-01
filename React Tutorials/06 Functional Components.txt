@@ -1,0 +1,30 @@
+Functional Component 
+
+A js function that accepts input called props (properties) and return HTML which describes the UI
+
+Ex. 
+
+1. create components folder under src
+2. create Hello.js under components folder
+
+Hello.js 
+
+function Hello() {
+    return <h1>Hello World!</h1>;
+}
+
+export default Hello;
+
+App.js
+
+import Hello from './components/Hello'
+
+function App() {
+  return (
+    <div className="App">
+      <Hello></Hello> 
+    </div>
+  );
+}
+
+export default App;
