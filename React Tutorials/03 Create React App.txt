@@ -1,0 +1,24 @@
+How to create a React app?
+
+Prerequiste 
+- Nodejs
+- VS Code
+
+1. Create a folder
+2. Open VS Code and drag that folder in
+3. Open terminal and type 'npx create-react-app project_name'
+   - It will install this package, 'create-react-app' and create a react app for you
+   - Hence, you do not need to install/setup react on your machine
+
+*npx is node package runner and npm is node package manager
+
+4. Once, you see 'Happy hacking!' in the terminal, cra is completed and type the commands
+   suggested to launch the react app on the local server
+
+5. To restart the server, type 'npm start'
+
+6. To enable typing in terminal, use 'ctrl + c' 
+
+
+
+
