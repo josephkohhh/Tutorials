@@ -4,6 +4,7 @@ Overview of react main folder/file structure
 
 ---------------------------------------------------------------------------------------------------------
 package.json
+
 - This is a metadata file in a Node.js project that contains essential info about the project and its dependencies. 
 
   scripts 
@@ -12,10 +13,13 @@ package.json
 
   dependencies
   - This are packages (software/libraries) that are required for the application in order to run
+
 ---------------------------------------------------------------------------------------------------------
 node_modules 
+
 - This directory contains all the 3rd party libraries and dependencies (node modules) that the react app relies on
 - Eg. react, react router, redux, etc.
+
 ---------------------------------------------------------------------------------------------------------
 
 public folder
