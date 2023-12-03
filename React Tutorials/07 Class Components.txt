@@ -1,7 +1,7 @@
 Class Component 
 
 A ES6 class that extend from react's component class
-- they must contain a render method which returns HTML
+- they must contain a render method which returns jsx
 
 Ex. 
 

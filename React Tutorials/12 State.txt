@@ -1,0 +1,56 @@
+State
+
+It is an obj that hold info but may change over the lifetime of that component
+- state is more dyanmic to use compared to props
+
+Props 
+- passed to the component 
+- props are immutable
+- props can be accessed as props, this.props
+- they are like parameters passed to a function 
+
+State
+- contained inside component
+- state can be changed (setState())
+- functional: useState hook / class: this.state
+- they are like variables declared in the function body
+
+Simple counter program:
+
+Counter.js
+
+import { Component } from "react";
+
+class Counter extends Component {
+    constructor() {
+        super()
+        this.state = {
+            counter: 0,
+        };
+    }
+
+    increment() {
+        this.setState({
+            counter: this.state.counter + 1
+        });
+    }
+
+    decrement(){
+        this.setState({
+            counter: this.state.counter - 1
+        });
+    }
+
+    render() {
+        return (<div>
+            <h3>Count value: {this.state.counter}</h3>
+            <button onClick={()=> this.increment()}>Increment</button>
+            <button onClick={()=> this.decrement()}>Decrement</button>
+        </div>)
+
+    }
+}
+
+export default Counter;
+
+In conclusion, state is an obj and has to be init in the state constructor. Use setState method to set value

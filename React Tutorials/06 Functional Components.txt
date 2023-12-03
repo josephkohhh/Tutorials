@@ -1,6 +1,6 @@
 Functional Component 
 
-A js function that accepts input called props (properties) and return HTML which describes the UI
+A js function that accepts input called props (properties) and return jsx which describes the UI
 
 Ex. 
 

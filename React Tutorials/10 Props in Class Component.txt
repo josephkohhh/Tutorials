@@ -1,10 +1,12 @@
 Properties in Class Component
-- Props are used to pass in attributes and children to components
+- an obj that hold information to control behaviour of a component
+- used to pass in attributes and children to components
+- immutable 
 
 <img src="example.jpg" width="100" height="100">
 
-- This is a html syntax that passes in width and height property
-- When creating components, we also want to pass in props to the components
+- above html syntax that passes in width and height property
+- when creating components, we also want to pass in props to the components
 
 Ex. 
 

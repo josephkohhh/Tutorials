@@ -1,21 +1,20 @@
-What is a component?
+What is a Component?
 
-- The core building block of React are components
-- Small components combined together form the entire UI
-- A react app comprises of multiple small components
-- Components can be nested inside one another
+- small components combined together form the entire UI
+- components can be nested inside one another
+- a react app comprises of multiple small components
+- the core building block of React are components
 
 Component in code
 
-- Component code is placed in javascript file (Eg. App.js)
-- 2 types of component
+Component codes is placed in js file (Eg. App.js)
   - Functional component
   - Class component 
 
 -----------------------------------------------------------------------------------------------------
 Functional Component 
 
-- A js function that accepts input called props (properties) and return HTML which describes the UI
+A js function that can accepts input called props (properties) and return jsx which describes the UI
 
 Ex. 
 
@@ -26,8 +25,8 @@ function Welcome(props) {
 -----------------------------------------------------------------------------------------------------
 Class Component 
 
-- A ES6 class that extend from react's component class
-- They must contain a render method which returns HTML
+A ES6 class that extend from react's component class
+- they must contain a render method which returns jsx
 
 class Welcome extends React.Component {
  render() {
