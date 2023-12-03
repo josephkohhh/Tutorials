@@ -1,0 +1,36 @@
+Properties in Class Component
+- Props are used to pass in attributes and children to components
+
+<img src="example.jpg" width="100" height="100">
+
+- This is a html syntax that passes in width and height property
+- When creating components, we also want to pass in props to the components
+
+Ex. 
+
+Message.js
+
+import { Component } from "react";
+
+class Message extends Component {
+    render() {
+        return <h1>Message Code: {this.props.messageCode} Message: {this.props.messageContent}</h1>
+    }
+}
+
+export default Message;
+
+
+App.js
+
+import Message from './components/Message';
+
+function App() {
+  return (
+    <div className="App">
+      <Message messageCode="10" messageContent="This is msg from props"></Message>
+    </div>
+  );
+}
+
+export default App;

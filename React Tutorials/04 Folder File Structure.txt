@@ -2,7 +2,7 @@ React folder/file structure
 
 Overview of react main folder/file structure
 
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 package.json
 
 - This is a metadata file in a Node.js project that contains essential info about the project and its dependencies. 
@@ -14,14 +14,13 @@ package.json
   dependencies
   - This are packages (software/libraries) that are required for the application in order to run
 
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 node_modules 
 
 - This directory contains all the 3rd party libraries and dependencies (node modules) that the react app relies on
 - Eg. react, react router, redux, etc.
 
----------------------------------------------------------------------------------------------------------
-
+-----------------------------------------------------------------------------------------------------
 public folder
 
 favicon.ico 
@@ -32,8 +31,7 @@ index.html
 - Should not change any code in this file as react will take control of this file and insert components dynamically
 - React will insert components under <div id="root"></div>
 
----------------------------------------------------------------------------------------------------------
-
+-----------------------------------------------------------------------------------------------------
 src 
 
 index.js 
@@ -41,7 +39,7 @@ index.js
 - The app.js file has a component called App
 - The App component is rendered into the DOM element with the id of 'root'
 
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 
 
 

@@ -1,0 +1,35 @@
+Class Component 
+
+A ES6 class that extend from react's component class
+- they must contain a render method which returns HTML
+
+Ex. 
+
+1. create components folder under src
+2. create Message.js under components folder
+
+Message.js 
+
+import { Component } from "react";
+
+class Message extends Component {
+    render() {
+        return <h1>This is a class component</h1>
+    }   
+}
+
+export default Message;
+
+App.js
+
+import Message from './components/Message'
+
+function App() {
+  return (
+    <div className="App">
+     <Message></Message>
+    </div>
+  );
+}
+
+export default App;
