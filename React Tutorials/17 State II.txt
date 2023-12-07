@@ -1,0 +1,52 @@
+State II
+
+React 16.8 update has introduced hooks which allows state and other react features on functional components 
+ - create a functional component
+ - import useState hook
+ - syntax to implement useState hook: 
+   - const [state, setState] = useState(initialState);
+   - useState returns an array with the current state value and a function to update it
+   - the initialState can be int, string, etc
+
+Ex.
+
+FunctionalCounter.js
+
+import { useState } from "react";
+
+function FunctionalCounter() {
+    const [counter, setCounter] = useState(0);
+
+    const increment = () => {
+        setCounter(counter + 1);
+    }
+    const decrement = () => {
+        setCounter(counter - 1);
+    }
+
+    return (<div>
+        <div>Counter Value: {counter}</div>
+        <div><button onClick={increment}>Increment</button></div>
+        <div><button onClick={decrement}>Decrement</button></div>
+    </div>)
+}
+
+export default FunctionalCounter;
+
+App.js
+
+import FunctionalCounter from './components/FunctionalCounter';
+
+function App() {
+  return (
+    <div className="App">
+     <FunctionalCounter></FunctionalCounter>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+

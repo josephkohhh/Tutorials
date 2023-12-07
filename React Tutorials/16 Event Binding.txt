@@ -1,6 +1,12 @@
 Event Binding
 
-Arrow functions inherit the 'this' value from the enclosing scope.
+There are several ways to bind events in React
+- Inline Arrow Function in JSX
+- Binding in the Constructor
+- Arrow Function in Render
+
+----------------------------------------------------------------------------------------------
+1. Inline Arrow Function in JSX
 
 Ex.
 
@@ -40,6 +46,94 @@ class Counter extends Component {
 }
 
 export default Counter;
+
+----------------------------------------------------------------------------------------------
+2. Binding in the Constructor
+
+Ex.
+
+Counter.js
+
+import { Component } from "react";
+
+class Counter extends Component {
+    constructor() {
+        super()
+        this.state = {
+            counter: 0,
+        };
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
+    }
+
+    increment() {
+        this.setState({
+            counter: this.state.counter + 1
+        });
+    }
+
+    decrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <h3>Count value: {this.state.counter}</h3>
+                <button onClick={this.increment}>Increment</button>
+                <button onClick={this.decrement}>Decrement</button>
+            </div>
+        );
+    }
+}
+
+export default Counter;
+
+----------------------------------------------------------------------------------------------
+3. Arrow Function in Render
+
+Ex.
+
+Counter.js
+
+import { Component } from "react";
+
+class Counter extends Component {
+    constructor() {
+        super()
+        this.state = {
+            counter: 0,
+        };
+    }
+
+    increment() {
+        this.setState({
+            counter: this.state.counter + 1
+        });
+    }
+
+    decrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <h3>Count value: {this.state.counter}</h3>
+                <button onClick={() => this.increment()}>Increment</button>
+                <button onClick={() => this.decrement()}>Decrement</button>
+            </div>
+        );
+    }
+}
+
+export default Counter;
+
+----------------------------------------------------------------------------------------------
 
 App.js
 
