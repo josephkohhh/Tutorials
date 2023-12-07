@@ -1,0 +1,35 @@
+Event Listener in a Functional Component
+
+Ex.
+
+FunctionEvent.js
+
+function FunctionEvent() {
+    const handleClick = () => {
+        console.log("Button Clicked!");
+    };
+    return (
+        <div>
+            Functional Component
+            <button onClick={handleClick}>Click here</button>
+        </div>
+    );
+}
+
+export default FunctionEvent;
+
+App.js
+
+import FunctionEvent from './components/FunctionEvent';
+
+function App() {
+  return (
+    <div className="App">
+      <FunctionEvent></FunctionEvent>
+    </div>
+  );
+}
+
+export default App;
+
+

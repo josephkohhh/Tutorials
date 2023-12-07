@@ -1,0 +1,46 @@
+Destructuring Props 
+
+Components can receive props as arguments and can be destructured to extract specific values from those props. It makes your code cleaner and more readable
+
+Ex.
+
+Profile.js
+
+function Profile(props) {
+    const { name, lastname } = props;
+    return <h1>Name: {name} {lastname}</h1>;
+}
+
+export default Profile;
+
+Ex.
+
+Resume.js
+
+import { Component } from "react";
+
+class Resume extends Component {
+    render() {
+        const { name, lastname } = this.props
+        return <h1>Name {name} {lastname}</h1>
+    }
+}
+
+export default Resume;
+
+App.js
+
+import Profile from './components/Profile'
+import Resume from './components/Resume';
+
+function App() {
+  return (
+    <div className="App">
+      <Profile name="John" lastname="Doe"></Profile>
+      <Resume name="Tom" lastname="Ford"></Resume>
+    </div>
+  );
+}
+
+export default App;
+

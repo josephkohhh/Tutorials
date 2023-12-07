@@ -1,0 +1,37 @@
+Event Listener in a Class Component
+
+Ex.
+
+ClassEvent.js
+
+import { Component } from "react";
+
+class ClassEvent extends Component {
+  handleClick = () => {
+    console.log('Button Clicked!');
+  }
+  render() {
+    return (
+      <div>
+        Class Component
+        <button onClick={this.handleClick}>Click</button>
+      </div>
+    );
+  }
+}
+
+export default ClassEvent;
+
+App.js
+
+import ClassEvent from './components/ClassEvent';
+
+function App() {
+  return (
+    <div className="App">
+      <ClassEvent></ClassEvent>
+    </div>
+  );
+}
+
+export default App;
