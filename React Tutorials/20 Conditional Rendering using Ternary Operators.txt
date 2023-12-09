@@ -1,0 +1,31 @@
+Conditional Rendering using Ternary Operators
+
+It is frequently used to render different components based on ternary operator
+
+Ex1.
+
+ConditionalComponent.js
+
+import { useState } from "react";
+
+export default function ConditionalComponent() {
+    const [display, setDisplay] = useState(true);
+
+    return display ? (<div><h3>This is a conditional component</h3></div>) : (<div><h3>Nothing to see here</h3></div>)
+}
+
+App.js
+
+import ConditionalComponent from './components/ConditionalComponent';
+
+function App() {
+  return (
+    <div className="App">
+      <ConditionalComponent></ConditionalComponent>
+    </div>
+  );
+}
+
+export default App;
+
+

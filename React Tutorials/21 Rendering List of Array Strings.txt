@@ -1,0 +1,25 @@
+Rendering a List of Array Strings
+
+Ex.
+
+Product.js
+
+export default function Product() {
+    const products = ["Laptop", "Modem", "Phone", "Laptop"];
+    const productList = products.map((product, index) => <h3 key={index}>{product}</h3>);
+    return <div>{productList}</div>;
+}
+
+App.js
+
+import Product from './Product';
+
+function App() {
+  return (
+    <div className="App">
+      <Product></Product>
+    </div>
+  );
+}
+
+export default App;

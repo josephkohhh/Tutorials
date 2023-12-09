@@ -18,8 +18,8 @@ A js function that can accepts input called props (properties) and return jsx wh
 
 Ex. 
 
-function Welcome(props) {
- return <h1>Hello, {props.name}</h1>;
+function Welcome() {
+ return <h1>Welcome Functional!</h1>;
 }
 
 -----------------------------------------------------------------------------------------------------
@@ -28,9 +28,11 @@ Class Component
 A ES6 class that extend from react's component class
 - they must contain a render method which returns jsx
 
-class Welcome extends React.Component {
+import { Component } from "react";
+
+class Welcome extends Component {
  render() {
-   return <h1>Hello, {this.props.name}</h1>;
+   return <h1>Welcome Class!</h1>;
  }
 }
 

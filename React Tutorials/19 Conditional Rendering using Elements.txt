@@ -1,0 +1,38 @@
+Conditional Rendering using Elements
+
+It is frequently used to render different elements based on a condition
+
+Ex1.
+
+ConditionalComponent.js
+
+import { useState } from "react";
+
+export default function ConditionalComponent() {
+    const [display, setDisplay] = useState(true);
+    let output;
+
+    if (display) {
+        output = <h3>This is a conditional component</h3>
+    } else {
+        output = <h3>Nothing to see here</h3>
+    }
+
+    return <div>{output}</div>
+}
+
+App.js
+
+import ConditionalComponent from './components/ConditionalComponent';
+
+function App() {
+  return (
+    <div className="App">
+      <ConditionalComponent></ConditionalComponent>
+    </div>
+  );
+}
+
+export default App;
+
+
