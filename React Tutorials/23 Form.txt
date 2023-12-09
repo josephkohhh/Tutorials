@@ -1,0 +1,150 @@
+Form
+
+You can create a form to handle user input 
+- create input field(s)
+- create variable to handle input value
+- assign an onChange to the input field(s)
+- in the onChange method, write code to setState to new event value
+- create a button type to submit form 
+- assign a method to handle form's onSubmit
+- in the submit method, write code to save to backend
+
+Ex1.
+
+FunctionalForm.js
+
+import React, { useState } from "react";
+
+const FunctionalForm = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      firstname: event.target.value,
+    });
+  };
+
+  const handleLastNameChange = (event) => {
+    setFormData({
+      ...formData,
+      lastname: event.target.value,
+    });
+  };
+
+  // In a real-world app, onSubmit should handle backend interactions
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({
+      fname: formData.firstname,
+      lname: formData.lastname,
+    });
+  };
+
+  return (
+    <div>
+      Form
+      <form onSubmit={handleSubmit}>
+        <input onChange={handleChange} type="text" value={formData.firstname} />
+
+        <input
+          value={formData.lastname}
+          type="text"
+          onChange={handleLastNameChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default FunctionalForm;
+
+App.js
+
+import FunctionalForm from "./components/FunctionalForm";
+
+function App() {
+  return (
+    <div className="App">
+      <FunctionalForm></FunctionalForm>
+    </div>
+  );
+}
+
+export default App;
+
+Ex2.
+
+ClassForm.js
+
+import { Component } from "react";
+
+class ClassForm extends Component {
+  state = {
+    firstname: "",
+    lastname: "",
+  };
+  handleChange = (event) => {
+    this.setState({
+      firstname: event.target.value,
+    });
+  };
+  handleLastNameChange = (event) => {
+    this.setState({
+      lastname: event.target.value,
+    });
+  };
+
+  // In real world app, once click submit shd go to backend
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({
+      fname: this.state.firstname,
+      lname: this.state.lastname,
+    });
+  };
+  render() {
+    return (
+      <div>
+        Form
+        <form onSubmit={this.handleSubmit}>
+          <input
+            onChange={this.handleChange}
+            type="text"
+            value={this.state.firstname}
+          ></input>
+
+          <input
+            value={this.state.lastname}
+            type="text"
+            onChange={this.handleLastNameChange}
+          ></input>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default ClassForm;
+
+App.js
+
+import Form from "./components/ClassForm";
+
+function App() {
+  return (
+    <div className="App">
+      <ClassForm></ClassForm>
+    </div>
+  );
+}
+
+export default App;
+
+
+
