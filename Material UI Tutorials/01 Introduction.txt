@@ -1,0 +1,9 @@
+What is Material UI?
+
+It is an UI component library for React
+- provides components to build UI 
+- implementation of google's material design specs
+
+React uses Material UI
+Angular uses Angular Material
+Vue uses Vuetify

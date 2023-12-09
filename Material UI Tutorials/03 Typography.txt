@@ -1,0 +1,47 @@
+Typography
+
+It deals with style and appearance of text in the website
+- mui provides various typography levels
+
+Ex.
+
+MuiTypography.tsx 
+
+import { Typography } from "@mui/material";
+
+export const MuiTypography = () => {
+  return (
+    <div>
+      <Typography variant="h1">h1 Heading</Typography>
+      <Typography variant="h2">h2 Heading</Typography>
+      <Typography variant="h3">h3 Heading</Typography>
+      <Typography variant="h4">h4 Heading</Typography>
+      <Typography variant="h5">h5 Heading</Typography>
+      <Typography variant="h6">h6 Heading</Typography>
+
+      <Typography variant="subtitle1">Sub title 1</Typography>
+      <Typography variant="subtitle2">Sub title 2</Typography>
+
+      <Typography variant="body1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+        aliquid, magni quasi corrupti neque et a sed. Sequi modi ducimus animi
+        provident sint consectetur error molestiae possimus! Nam, minima rerum.
+      </Typography>
+      <Typography variant="body2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui
+        recusandae ipsa perferendis, in, dolor maiores, consequuntur vero cumque
+        laborum quae quidem esse voluptas eaque quaerat sunt amet perspiciatis
+        similique?
+      </Typography>
+
+      <Typography variant="h4" component="h1" gutterBottom>
+        h4 Heading
+      </Typography>
+    </div>
+  );
+};
+
+------------
+
+component = "h1": this code is rendering a h4 heading but using the HTML <h1> tag
+gutterBottom: creates additional bottom margin

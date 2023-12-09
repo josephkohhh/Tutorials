@@ -1,0 +1,10 @@
+MaterialUI Setup
+
+1. On VSCode terminal, type create-react-app project_name --template typescript
+2. type cd project_name
+3. type npm start to ensure the project can run
+4. go to https://mui.com/material-ui/
+5. download the mui package by using this code npm install @mui/material @emotion/react @emotion/styled
+6. the mui library should be listed in the package.json file under dependencies 
+7. create a folder called components under src 
+8. congratulations! a react app with mui is installed

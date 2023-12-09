@@ -8,7 +8,7 @@ Pre-requiste
 
 2. Open VS Code and drag that folder in
 
-3. Open terminal and type 'npx create-react-app project_name'
+3. Open terminal and type 'npx create-react-app project_name' || create-react-app project_name --template typescript
    - It will install this package, 'create-react-app' and create a react app for you
    - Hence, you do not need to install/setup react on your machine
 
@@ -20,6 +20,7 @@ Pre-requiste
 6. To enable typing in terminal, use 'ctrl + c' 
 
 *npx is node package runner and npm is node package manager
+
 
 
 
