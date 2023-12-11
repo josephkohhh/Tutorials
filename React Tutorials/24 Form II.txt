@@ -1,0 +1,59 @@
+Form II 
+
+This simple todo app takes in user input, store in an array and display them
+
+Ex.
+
+Todo.js
+
+import { useState } from "react";
+import ListItem from "./ListItem";
+
+export default function Todo() {
+  const [todo, setToDo] = useState("");
+  const [toDoList, setToDoList] = useState([]);
+
+  const handleChange = (event) => {
+    setToDo(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setToDoList([...toDoList, todo]);
+    setToDo("");
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={todo} onChange={handleChange}></input>
+        <button type="submit">Add</button>
+      </form>
+      {toDoList.map((item) => (
+        <ListItem key={item} name={item}></ListItem>
+      ))}
+    </div>
+  );
+}
+
+ListItem.js
+
+export default function ListItem({ name }) {
+  return <h3>{name}</h3>;
+}
+
+App.js
+
+import Todo from "./components/Todo.js";
+import "./App.css";
+
+function App() {
+  return (
+    <div className="App">
+      <Todo></Todo>
+    </div>
+  );
+}
+
+export default App;
+

@@ -1,0 +1,34 @@
+CSS Modules
+
+It involves defining a class in the component's jsx which will reference to a desired css module file 
+
+Ex.
+
+ModuleComponent.js
+
+import styles from "./style.module.css";
+
+export default function ModuleComponent() {
+  return <div className={styles.header}>This is a Module Component</div>;
+}
+
+Style.Module.css
+
+.header {
+  color: yellowgreen;
+  font-size: 2.5rem;
+}
+
+App.js
+
+import ModuleComponent from "./components/ModuleComponent.js";
+
+function App() {
+  return (
+    <div className="App">
+      <ModuleComponent></ModuleComponent>
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,34 @@
+CSS Stylesheet
+
+It involves defining a class in the component's jsx which will reference to a desired css file 
+
+Ex.
+
+StylesheetComponent.js
+
+import "./Style.css";
+
+export default function StylesheetComponent() {
+  return <div className="header">This is a Stylesheet Component</div>;
+}
+
+Style.css
+
+.header {
+  color: blueviolet;
+  font-size: 2.5rem;
+}
+
+App.js
+
+import StylesheetComponent from "./components/StylesheetComponent.js";
+
+function App() {
+  return (
+    <div className="App">
+      <StylesheetComponent></StylesheetComponent>
+    </div>
+  );
+}
+
+export default App;

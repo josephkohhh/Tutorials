@@ -1,0 +1,34 @@
+Inline Styling
+
+It involves defining an obj with desired styles and passing the obj to jsx as a prop
+
+Ex.
+
+InlineComponent.js
+
+const header = {
+  color: "red",
+  fontSize: "2.5rem",
+};
+
+export default function InlineComponent() {
+  return (
+    <div>
+      <h1 style={header}>This is an inline component</h1>
+    </div>
+  );
+}
+
+App.js
+
+import InlineComponent from "./components/InlineComponent.js";
+
+function App() {
+  return (
+    <div className="App">
+      <InlineComponent></InlineComponent>
+    </div>
+  );
+}
+
+export default App;

@@ -24,6 +24,7 @@ export function getArea(radius){
 index.js
 
 //Ex1.
+
 import { PI, getCircumference, getArea } from "./math_util.js";
 
 console.log(PI);
@@ -34,6 +35,7 @@ console.log(circumference);
 console.log(area);
 
 //Ex2.
+
 import * as math_util from "./math_util.js";
 
 console.log(math_util.PI);
