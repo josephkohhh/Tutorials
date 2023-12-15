@@ -1,0 +1,94 @@
+Buttons
+
+Buttons with different color, size, style, etc
+
+Ex.
+
+MuiButton.tsx
+
+import { Stack, Button, IconButton } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+
+export const MuiButton = () => {
+  return (
+    <Stack spacing={4}>
+      <Stack spacing={2} direction="row">
+        <Button variant="text">Text</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">Outlined</Button>
+
+        <Button variant="contained" href="https://google.com">
+          Contained with href
+        </Button>
+      </Stack>
+
+      <Stack spacing={2} direction="row">
+        <Button variant="contained" color="primary">
+          Primary
+        </Button>
+        <Button variant="contained" color="secondary">
+          Secondary
+        </Button>
+        <Button variant="contained" color="error">
+          Error
+        </Button>
+        <Button variant="contained" color="warning">
+          Warning
+        </Button>
+        <Button variant="contained" color="info">
+          Info
+        </Button>
+        <Button variant="contained" color="success">
+          Success
+        </Button>
+      </Stack>
+
+      <Stack display="block" spacing={2} direction="row">
+        <Button variant="contained" size="small">
+          Small
+        </Button>
+        <Button variant="contained" size="medium">
+          Medium
+        </Button>
+        <Button variant="contained" size="large">
+          Large
+        </Button>
+      </Stack>
+
+      <Stack spacing={2} direction={"row"}>
+        <Button
+          variant="contained"
+          startIcon={<SendIcon />}
+          disableRipple
+          onClick={() => alert("Clicked")}
+        >
+          Send
+        </Button>
+        <Button variant="contained" endIcon={<SendIcon />} disableElevation>
+          Send
+        </Button>
+        <IconButton aria-label="send" color="success" size="small">
+          <SendIcon />
+        </IconButton>
+      </Stack>
+    </Stack>
+  );
+};
+
+------------
+
+stack component helps organize and align components in a stack, either horizontally or vertically
+ - stack display property is 'flex' by default and affects size of the button
+
+button
+- disableElevation disables the button shadow 
+- disableRipple disables ripple effect when clicking button
+
+material icons
+ - npm install @mui/icons-material
+ - go to material icons under components
+ - copy link and paste in vs code
+ 
+iconbutton 
+ - use for like, favourite, bookmark
+ - aria-label provides a text alternative for users who rely on screen readers or other assistive technologies
