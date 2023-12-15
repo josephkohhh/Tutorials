@@ -1,0 +1,51 @@
+Fragments
+
+It allows you to group child components together without adding an extra node to DOM
+
+Ex.
+
+Column.js
+
+import React from "react";
+export default function Column() {
+  return (
+    <>
+      <td>Hello</td>
+      <td>There</td>
+    </>
+  );
+}
+
+Table.js
+
+import Column from "./Column";
+
+export default function Table() {
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <Column></Column>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
+App.js
+
+import Table from "./components/Table";
+
+function App() {
+  return (
+    <div className="App">
+      <Table></Table>
+    </div>
+  );
+}
+
+export default App;
+
+------------
+
+You can also use <></> instead of <React.Fragment></React.Fragment>

@@ -1,0 +1,22 @@
+Fragments
+
+It allows you to group child components together without adding an extra node to DOM
+
+Ex.
+
+FragmentComponent.js
+
+import React from "react";
+
+export default function FragmentComponent() {
+  return (
+    <React.Fragment>
+      <h1>Heading</h1>
+      <h2>Subhead</h2>
+    </React.Fragment>
+  );
+}
+
+------------
+
+With fragments, you do not need group child components with <div></div> in jsx 

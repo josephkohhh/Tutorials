@@ -1,0 +1,71 @@
+Memos
+
+How React renders components?
+
+- lets say you have component B and component C nested within component A
+- when component A re-renders, component B and C also will be re-render
+- if component B and component C does not have props/state, it does not make sense to re-render them
+- this could lead to performance issue for unnecessary renders
+
+Memos is a performance optimization that helps prevent unnecessary renders of functional components
+
+Ex.
+
+Child.js
+
+import React from "react";
+
+function Child({ count }) {
+  console.log("child component is being rerendered");
+  return <div>childcount is {count}</div>;
+}
+
+export default React.memo(Child);
+
+Parent.js
+
+import Child from "./Child";
+import { useState } from "react";
+
+export default function Parent() {
+  const [parentcount, setParentCount] = useState(0);
+  const [childcount, setChildCount] = useState(0);
+
+  const changeParentCount = () => {
+    setParentCount(parentcount + 1);
+  };
+
+  const changeChildCount = () => {
+    setChildCount(childcount + 1);
+  };
+
+  return (
+    <div>
+      This is parent component
+      <h1>Parent count is {parentcount}</h1>
+      <Child count={childcount}></Child>
+      <button onClick={changeParentCount}>Increment Parent Count</button>
+      <button onClick={changeChildCount}>Increment Child Count</button>
+    </div>
+  );
+}
+
+App.js
+
+import Parent from "./components/Parent";
+
+function App() {
+  return (
+    <div className="App">
+      <Parent></Parent>
+    </div>
+  );
+}
+
+export default App;
+
+------------
+
+By using export default React.memo(Child);
+- you are memoizing the child component based on its props
+- child component will only rerender if its props change

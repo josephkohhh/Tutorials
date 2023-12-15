@@ -1,0 +1,37 @@
+Portals
+
+It is a way to render children into a DOM node that exists outside the parent component's DOM hierarchy
+- render elements outside of <root> element
+- it is used for modals, tooltips, or popovers
+
+Ex.
+
+Modal.js
+
+import { createPortal } from "react-dom";
+
+export default function Modal() {
+  return createPortal(<div>Modal</div>, document.getElementById("modal"));
+}
+
+App.js
+
+import Modal from "./components/Modal";
+
+function App() {
+  return (
+    <div className="App">
+      <Modal></Modal>
+    </div>
+  );
+}
+
+export default App;
+
+Index.html
+
+<div id="modal"></div>
+
+------------
+
+the createPortal allows to render the component in own specified div
