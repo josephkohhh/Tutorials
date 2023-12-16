@@ -1,4 +1,4 @@
-Buttons
+Button
 
 Buttons with different color, size, style, etc
 

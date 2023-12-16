@@ -1,0 +1,48 @@
+Button Group
+
+Buttons grouped together
+
+Ex.
+
+MuiButton.tsx
+
+import { Stack, Button, ButtonGroup } from "@mui/material";
+
+export const MuiButton = () => {
+  return (
+    <Stack spacing={4}>
+       <Stack direction="row">
+        <ButtonGroup variant="contained">
+          <Button>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
+      </Stack>
+      <Stack direction="row">
+        <ButtonGroup variant="outlined">
+          <Button>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
+      </Stack>
+       <Stack direction="row">
+        <ButtonGroup
+          variant="text"
+          orientation="vertical"
+          size="large"
+          color="secondary"
+          aria-label="alignment button group"
+        >
+          <Button onClick={() => alert("left clicked")}>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
+      </Stack>
+    </Stack>
+  );
+};
+
+------------
+
+ButtonGroup holds all buttons together
+- orientation="vertical" will make the grouped buttons display vertically
