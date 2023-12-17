@@ -1,0 +1,48 @@
+Props
+
+It is a mechanism for passing data from a parent component to a child component
+- props is an object
+- props can be destructured 
+- props are immutable
+
+Ex.
+
+Hello.jsx
+
+export const Hello = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.message} {props.name}!
+      </h1>
+    </div>
+  );
+};
+
+-- or --
+
+export const Hello = ({ name, message }) => {
+  return (
+    <div>
+      <h1>
+        {message} {name}!
+      </h1>
+    </div>
+  );
+};
+
+App.jsx
+
+import { Hello } from "./components/Hello";
+
+function App() {
+  return (
+    <>
+      <Hello name="john" message="Hey there!" />
+      <Hello name="tom" message="Ola!" />
+      <Hello name="sue" message="Ni hao!" />
+    </>
+  );
+}
+
+export default App;
