@@ -1,0 +1,38 @@
+What is a Component?
+
+- small components combined together form the entire UI
+- components can be nested inside one another
+- a react app comprises of multiple components
+- the core building block of React are components
+
+Component codes is placed in jsx file (Eg. App.jsx)
+  - Class component 
+  - Functional component	
+
+-----------------------------------------------------------------------------------------------------
+Functional Component 
+
+A js function that can accepts input called props (properties) and return jsx which describes the UI
+
+Ex. 
+
+function Welcome() {
+ return <h1>Welcome Functional!</h1>;
+}
+
+-----------------------------------------------------------------------------------------------------
+Class Component 
+
+A ES6 class that extend from react's component class
+- they must contain a render method which returns jsx
+
+import { Component } from "react";
+
+class Welcome extends Component {
+ render() {
+   return <h1>Welcome Class!</h1>;
+ }
+}
+
+-----------------------------------------------------------------------------------------------------
+*The return statement for components are not html but jsx 

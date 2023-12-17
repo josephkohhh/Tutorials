@@ -1,0 +1,93 @@
+Text Field
+
+A field that allows user to type in 
+
+Ex.
+
+import { Stack, TextField, InputAdornment } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { useState } from "react";
+
+export const MuiTextField = () => {
+  const [viewer, setViewer] = useState(false);
+  const handleVisibility = () => {
+    setViewer((prevState) => !prevState);
+  };
+  const [value, setValue] = useState("");
+  return (
+    <Stack spacing={4}>
+      <Stack spacing={2} direction="row">
+        <TextField label="name" variant="outlined" />
+        <TextField label="name" variant="filled" />
+        <TextField label="name" variant="standard" />
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <TextField label="Small secondary" size="small" color="secondary" />
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <TextField label="Form input" color="success" required />
+        <TextField
+          label="Password"
+          color="error"
+          type="password"
+          helperText="
+         Dont share password with anyone"
+        />
+        <TextField
+          label="Password"
+          type="password"
+          helperText="
+         Dont share password with anyone"
+          disabled
+        />
+        <TextField label="Read Only" InputProps={{ readOnly: true }} />
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <TextField
+          label="Amount"
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          }}
+        />
+        <TextField
+          label="Weight"
+          InputProps={{
+            endAdornment: <InputAdornment position="end">kg</InputAdornment>,
+          }}
+        />
+        <TextField
+          label="Password"
+          color="error"
+          type={viewer ? "text" : "password"}
+          helperText="
+         Dont share password with anyone"
+          required
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end" onClick={handleVisibility}>
+                {viewer ? <VisibilityOffIcon /> : <VisibilityIcon />}
+              </InputAdornment>
+            ),
+          }}
+        />
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <TextField
+          label="Form Input"
+          required
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          error={!value}
+          helperText={!value ? "required" : "Dont share password with anyone"}
+        ></TextField>
+      </Stack>
+    </Stack>
+  );
+};
+
+
+------------
+
+This tutorial show input fields with different variants, props and event handler
+- !value checks if the value is empty is TRUE then do smth...

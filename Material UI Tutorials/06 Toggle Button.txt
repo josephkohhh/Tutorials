@@ -1,0 +1,60 @@
+Toggle Button
+
+Toggle buttons grouped together
+
+Ex.
+
+MuiButton.tsx
+
+import {
+  Stack,
+  ButtonGroup,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+import { useState } from "react";
+
+export const MuiButton = () => {
+  const [formats, setFormats] = useState<string | null>(null);
+  const handleFormatChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    updatedFormats: string | null
+  ) => {
+    setFormats(updatedFormats);
+  };
+  return (
+    <Stack spacing={4}>
+
+      <Stack direction="row">
+        <ToggleButtonGroup
+          aria-label="text formatting"
+          value={formats}
+          onChange={handleFormatChange}
+          size="small"
+          color="success"
+          orientation="vertical"
+          exclusive
+        >
+          <ToggleButton value="bold" aria-label="bold">
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value="italic" aria-label="italic">
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value="underlined" aria-label="underlined">
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Stack>
+
+    </Stack>
+  );
+};
+
+------------
+
+This tutorial showcases how u can click only 1 toggle button at a time in a toggle button group 
+- once clicked, the value of the toggle button gets updated 

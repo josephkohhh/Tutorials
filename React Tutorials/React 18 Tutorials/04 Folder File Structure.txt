@@ -1,0 +1,46 @@
+Overview of React folder/file structure 
+
+-----------------------------------------------------------------------------------------------------
+public folder
+
+index.html 
+- it is the main HTML file that serves as the entry point for entire react app
+- should not change any code in this file as react will insert components dynamically
+- react will insert components within <div id="root"></div>
+
+-----------------------------------------------------------------------------------------------------
+src 
+
+main.jsx 
+- it is the main file that serves as the entry point for the react app
+- it controls what component is rendered into the index.html file
+- the app.jsx file has a component called App
+- the app component is rendered into the DOM element with the id of 'root' 
+
+-----------------------------------------------------------------------------------------------------
+vite.config.js
+
+This file contains configs to run the vite app 
+
+-----------------------------------------------------------------------------------------------------
+package.json
+
+This is a metadata file in a Node.js project that contains essential info about the project and its dependencies
+
+  scripts 
+  - They are scripts that can be executed using npm 	
+  - Eg. dev, build, preview
+
+  dependencies
+  - This are packages (software/libraries) that are required for the application in order to run
+
+-----------------------------------------------------------------------------------------------------
+node_modules 
+
+This directory contains all the 3rd party libraries and dependencies (node modules) that the react app relies on
+- ex. react, react router, redux, etc.
+
+-----------------------------------------------------------------------------------------------------
+
+
+

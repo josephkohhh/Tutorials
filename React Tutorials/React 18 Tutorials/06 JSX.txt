@@ -1,0 +1,39 @@
+JSX
+
+It stands for Javascript XML (JSX) which is an extension to js language syntax
+- combination of html and js 
+
+Ex. 
+
+Hello.jsx
+
+const name = "Rob";
+
+const displayMessage = () => {
+  return <h3>Message displayed!</h3>;
+};
+
+export const Hello = () => {
+  return (
+    <div>
+      <h1>Hello {name}!</h1>
+      <h3>{displayMessage()}</h3>
+    </div>
+  );
+};
+
+App.jsx
+
+import { Hello } from "./components/Hello";
+
+function App() {
+  return (
+    <>
+      <Hello />
+    </>
+  );
+}
+
+export default App;
+
+

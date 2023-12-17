@@ -1,0 +1,30 @@
+How to create a React app using Vite?
+
+Pre-requiste 
+- Nodejs
+- VS Code
+
+1. Create a folder
+
+2. Open VS Code and drag that folder in
+
+3. Open terminal and type 
+   - npx create-vite my-react-app --template react
+   - It will create a react vite project for you
+   - Hence, you do not need to install/setup react on your machine
+
+4. Once done, cd to the project folder
+
+5. type npm install to download all required dependencies
+   - "react": "^18.2.0",
+   - "react-dom": "^18.2.0"
+
+6. Type npm run dev, copy/paste the local link to start the app 
+
+7. Type ctrl + c to stop the app
+
+*npx is node package runner and npm is node package manager
+
+
+
+
