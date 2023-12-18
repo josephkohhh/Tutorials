@@ -1,0 +1,49 @@
+Select
+
+A field that allows user to type in 
+
+Ex.
+
+MuiSelect.tsx
+
+import { Box, TextField, MenuItem } from "@mui/material";
+import { useState } from "react";
+
+export const MuiSelect = () => {
+  const [country, setCountry] = useState("");
+  console.log({ country });
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCountry(event.target.value as string);
+  };
+  return (
+    <>
+      <Box width="250px">
+        <TextField
+          fullWidth
+          label="Select Country"
+          select
+          value={country}
+          onChange={handleChange}
+          size="small"
+          color="success"
+          helperText={
+            country
+              ? "Selected country: " + country
+              : "Please select your country"
+          }
+          error={!country}
+        >
+          <MenuItem value="SG">Singapore</MenuItem>
+          <MenuItem value="AU">Australia</MenuItem>
+          <MenuItem value="KR">Korea</MenuItem>
+          <MenuItem value="TH">Thailand</MenuItem>
+        </TextField>
+      </Box>
+    </>
+  );
+};
+
+------------
+
+This tutorial show how to select a field option 
+- !country checks if the value is empty is TRUE then display error
