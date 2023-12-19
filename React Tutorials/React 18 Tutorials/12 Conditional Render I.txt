@@ -1,0 +1,40 @@
+Conditional Render I 
+
+It is to render different components based on certain conditions
+
+Ex.
+
+True.jsx
+
+export const True = () => {
+  return <h1>This is TRUE component</h1>;
+};
+
+False.jsx
+
+export const False = () => {
+  return <h1>This is FALSE component</h1>;
+};
+
+ConditionalComponent.jsx
+
+import { True } from "../components/True";
+import { False } from "../components/False";
+
+export const ConditionalComponent = () => {
+  const display = true;
+  if (display) {
+    return <True />;
+  } else return <False />;
+};
+
+App.jsx
+
+import { ConditionalComponent } from "./components/ConditionalComponent";
+
+function App() {
+  return <ConditionalComponent />;
+}
+export default App;
+
+*Industry practices a better approach without having to return 2x in a component

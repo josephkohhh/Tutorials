@@ -1,0 +1,24 @@
+Conditional Render III (Ternary Operator)
+
+It is to render different components based on certain conditions
+
+Ex.
+
+ConditionalComponent.jsx
+
+import { True } from "../components/True";
+import { False } from "../components/False";
+
+export const ConditionalComponent = () => {
+  const display = true;
+  return display ? <True /> : <False />;
+};
+
+App.jsx
+
+import { ConditionalComponent } from "./components/ConditionalComponent";
+
+function App() {
+  return <ConditionalComponent />;
+}
+export default App;

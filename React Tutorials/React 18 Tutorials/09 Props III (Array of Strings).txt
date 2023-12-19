@@ -1,0 +1,38 @@
+Props III (Arrays or Lists)
+
+It is a mechanism for passing data from a parent component to a child component
+- props is an object
+- props can be destructured 
+- props are immutable
+
+Ex.
+
+Fruits.jsx
+
+export const Fruits = ({ fruits }) => {
+  return (
+    <>
+      <ul>
+        {fruits.map((fruit) => (
+          <li key={fruit}>{fruit}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+
+App.jsx
+
+import { Fruits } from "./components/Fruits";
+
+function App() {
+  const fruits = ["Apple", "Mango", "Banana", "Orange"];
+  return (
+    <>
+      <Fruits fruits={fruits}></Fruits>
+    </>
+  );
+}
+export default App;
+

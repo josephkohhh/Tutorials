@@ -1,0 +1,28 @@
+Conditional Render II (Element Variables)
+
+It is to render different components based on certain conditions
+
+Ex.
+
+Messages.jsx
+
+export const Messages = () => {
+  let message;
+  const display = false;
+  if (display) {
+    message = <h1>This is message One</h1>;
+  } else {
+    message = <h1>This is message Two</h1>;
+  }
+  return message;
+};
+
+
+App.jsx
+
+import { Messages } from "./components/Messages";
+
+function App() {
+  return <Messages />;
+}
+export default App;

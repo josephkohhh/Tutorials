@@ -1,0 +1,60 @@
+Conditional Render IV 
+
+It is to render different components based on certain conditions
+
+Ex.
+
+Fruit.jsx
+
+export const Fruit = ({ name, price }) => {
+  return (
+    <>
+      {price > 6 ? (
+        <li>
+          {name} {price}
+        </li>
+      ) : (
+        ""
+      )}
+    </>
+  );
+};
+
+
+Fruits.jsx
+
+import { Fruit } from "../components/Fruit";
+
+export const Fruits = ({ fruits }) => {
+  return (
+    <>
+      <ul>
+        {fruits.map((fruit) => (
+          <Fruit key={fruit.name} name={fruit.name} price={fruit.price} />
+        ))}
+      </ul>
+    </>
+  );
+};
+
+App.jsx
+
+import { Fruits } from "./components/Fruits";
+
+function App() {
+  const fruits = [
+    { name: "Apple", price: 10 },
+    { name: "Banana", price: 9 },
+    { name: "Orange", price: 5 },
+  ];
+  return (
+    <>
+      <Fruits fruits={fruits}></Fruits>
+    </>
+  );
+}
+export default App;
+
+------------
+
+Displaying a list of fruits whose price is more than 6 

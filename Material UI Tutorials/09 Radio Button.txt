@@ -1,0 +1,61 @@
+Radio Button
+
+Radio buttons in a group
+
+Ex.
+
+MuiRadioButton.tsx
+
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
+  FormHelperText,
+} from "@mui/material";
+import { useState } from "react";
+
+export const MuiRadioButton = () => {
+  const [value, setValue] = useState("");
+  console.log({ value });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <Box>
+      <FormControl error>
+        <FormLabel id="job-experiemnce-group-label">
+          Years of experience
+        </FormLabel>
+        <RadioGroup
+          name="job-experience-group"
+          aria-labelledby="job-experiemnce-group-label"
+          value={value}
+          onChange={handleChange}
+          row
+        >
+          <FormControlLabel
+            control={<Radio size="medium" color="secondary" />}
+            label="0-2"
+            value="0-2"
+          />
+          <FormControlLabel control={<Radio />} label="3-5" value="3-5" />
+          <FormControlLabel control={<Radio />} label="6-10" value="6-10" />
+        </RadioGroup>
+        <FormHelperText>Select years of experience</FormHelperText>
+      </FormControl>
+    </Box>
+  );
+};
+
+
+------------
+
+This tutorial show how to select a radio button 
+- aria-labelledby is used in the <RadioGroup> component to associate the radio group with an element that serves as its label. 
+  The value of aria-labelledby is set to the ID of an element that provides a label for the radio group
+

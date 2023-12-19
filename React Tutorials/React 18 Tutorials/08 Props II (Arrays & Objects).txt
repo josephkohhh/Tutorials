@@ -1,4 +1,4 @@
-Props
+Props II (Array & Object)
 
 It is a mechanism for passing data from a parent component to a child component
 - props is an object

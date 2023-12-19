@@ -1,0 +1,60 @@
+Conditional Render IV 
+
+It is to render different components based on certain conditions
+
+Ex.
+
+Fruit.jsx
+
+export const Fruit = ({ name, price, soldout }) => {
+  return (
+    <>
+      <li>
+        {name} {price} {soldout ? "Soldout" : ""}
+      </li>
+    </>
+  );
+};
+
+Fruits.jsx
+
+import { Fruit } from "../components/Fruit";
+
+export const Fruits = ({ fruits }) => {
+  return (
+    <>
+      <ul>
+        {fruits.map((fruit) => (
+          <Fruit
+            key={fruit.name}
+            name={fruit.name}
+            price={fruit.price}
+            soldout={fruit.soldout}
+          />
+        ))}
+      </ul>
+    </>
+  );
+};
+
+App.jsx
+
+import { Fruits } from "./components/Fruits";
+
+function App() {
+  const fruits = [
+    { name: "Apple", price: 10, soldout: false },
+    { name: "Banana", price: 9, soldout: true },
+    { name: "Orange", price: 5, soldout: true },
+  ];
+  return (
+    <>
+      <Fruits fruits={fruits} />
+    </>
+  );
+}
+export default App;
+
+------------
+
+Displaying a list of fruits based on soldout status
