@@ -1,0 +1,52 @@
+State
+
+It is an object that holds information to control behaviour of component
+ - to save/update component's data dynamically
+
+State vs Props
+
+- State is contained inside a component. Props are passed to the component
+- State can be changed. Props are immutable
+- State is like a variable declared in function body. Props are like parameters passed to a function
+
+Ex.
+
+Counter.jsx
+
+import { useState } from "react";
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    setCount(count - 1);
+  };
+  return (
+    <>
+      <h1>Number Counter</h1>
+      <h3>The count is : {count}</h3>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </>
+  );
+};
+
+App.jsx
+
+import { Counter } from "./components/Counter";
+
+function App() {
+  return (
+    <>
+      <Counter />
+    </>
+  );
+}
+export default App;
+
+------------
+
+This simple counter app that increment/decrement in value
+
