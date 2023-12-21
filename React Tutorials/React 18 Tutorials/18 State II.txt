@@ -1,0 +1,65 @@
+Multiple State
+
+It is an object that holds information to control behaviour of component
+ - to save/update component's data dynamically
+
+State vs Props
+
+- State is contained inside a component. Props are passed to the component
+- State can be changed. Props are immutable
+- State is like a variable declared in function body. Props are like parameters passed to a function
+
+Ex.
+
+Counter.jsx
+
+import { useState } from "react";
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  const [incrementBy, setIncrementBy] = useState(1);
+  const [decrementBy, setDecrementBy] = useState(1);
+  const increment = () => {
+    setCount(count + incrementBy);
+  };
+  const decrement = () => {
+    setCount(count - decrementBy);
+  };
+  const increaseIncrement = () => {
+    setIncrementBy(incrementBy + 1);
+  };
+  const increaseDecrement = () => {
+    setDecrementBy(decrementBy + 1);
+  };
+  return (
+    <>
+      <h1>Number Counter</h1>
+      <h3>The count is : {count}</h3>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+
+      <h1>We are incrementing the value by: {incrementBy}</h1>
+      <button onClick={increaseIncrement}>Increase Increment</button>
+
+      <h1>We are decrementing the value by: {decrementBy}</h1>
+      <button onClick={increaseDecrement}>Increase Increment</button>
+    </>
+  );
+};
+
+App.jsx
+
+import { Form } from "./components/Counter";
+
+function App() {
+  return (
+    <>
+      <Counter />
+    </>
+  );
+}
+export default App;
+
+------------
+
+This enhanced counter app shows how to handle multiple states 

@@ -1,0 +1,56 @@
+Handle Form Submission
+
+To handle form submission
+
+Ex.
+
+Form.jsx
+
+import { useState } from "react";
+
+export const Form = () => {
+  const [name, setName] = useState({ firstName: "", lastName: "" });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(name);
+  };
+  return (
+    <>
+      <form>
+        <input
+          type="text"
+          value={name.firstName}
+          onChange={(event) =>
+            setName({ ...name, firstName: event.target.value })
+          }
+        />
+        <input
+          type="text"
+          value={name.lastName}
+          onChange={(event) =>
+            setName({ ...name, lastName: event.target.value })
+          }
+        />
+        <button onClick={handleSubmit}>Add</button>
+      </form>
+    </>
+  );
+};
+
+App.jsx
+
+import { Form } from "./components/Form";
+
+function App() {
+  return (
+    <>
+      <Form />
+    </>
+  );
+}
+export default App;
+
+
+------------
+
+This example shows how to handle form submission

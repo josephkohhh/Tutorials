@@ -1,0 +1,53 @@
+Handle Multiple Input 
+
+To handle multiple user inputs
+
+Ex.
+
+Form.jsx
+
+import { useState } from "react";
+
+export const Form = () => {
+  const [name, setName] = useState({ firstName: "", lastName: "" });
+
+  return (
+    <>
+      <form>
+        <input
+          type="text"
+          value={name.firstName}
+          onChange={(event) =>
+            setName({ ...name, firstName: event.target.value })
+          }
+        ></input>
+        <input
+          type="text"
+          value={name.lastName}
+          onChange={(event) =>
+            setName({ ...name, lastName: event.target.value })
+          }
+        ></input>
+      </form>
+    </>
+  );
+};
+
+App.jsx
+
+import { Form } from "./components/Form";
+
+function App() {
+  return (
+    <>
+      <Form />
+    </>
+  );
+}
+export default App;
+
+
+------------
+
+This example shows how to handle multiple user inputs and update/save to string object
+by cloning the array with spread operator

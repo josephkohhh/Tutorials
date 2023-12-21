@@ -1,0 +1,41 @@
+Handle Input
+
+To take user input and update/save to a variable 
+
+Ex.
+
+Form.jsx
+
+import { useState } from "react";
+
+export const Form = () => {
+  const [value, setValue] = useState("");
+  console.log({ value });
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  return (
+    <>
+      <form>
+        <input type="text" value={value} onChange={handleChange}></input>
+      </form>
+    </>
+  );
+};
+
+App.jsx
+
+import { Form } from "./components/Form";
+
+function App() {
+  return (
+    <>
+      <Form />
+    </>
+  );
+}
+export default App;
+
+------------
+
+This example shows how to handle user input and update/save to string variable 

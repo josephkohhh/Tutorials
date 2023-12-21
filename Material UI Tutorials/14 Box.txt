@@ -1,0 +1,42 @@
+Box
+
+It serves as a wrapper for the UIs
+- is used to replace <div> tag
+
+Ex.
+
+MuiLayout.tsx
+
+import { Box } from "@mui/material";
+
+export const MuiLayout = () => {
+  return (
+    <>
+      {" "}
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          color: "white",
+          height: "300px",
+          width: "300px",
+          padding: "16px",
+          "&:hover": {
+            backgroundColor: "primary.light",
+          },
+        }}
+      >
+        Box
+      </Box>
+      <Box
+        display="flex"
+        height="300px"
+        width="300px"
+        bgcolor="success.light"
+        p={2} //Padding, 2 would be 16px
+      >
+        Box 2
+      </Box>
+    </>
+  );
+};
+
