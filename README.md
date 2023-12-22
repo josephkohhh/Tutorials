@@ -1,5 +1,5 @@
 # Tutorials
-This repo contains my tutorial notes.
+This repo contains my tutorial notes
 
 ## Table of Contents
 
