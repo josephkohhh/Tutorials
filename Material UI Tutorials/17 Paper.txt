@@ -1,0 +1,71 @@
+Paper
+
+It is used to provide elevation and shadow to the UI
+- used under the hood to build Card component
+- mostly used on form 
+
+Ex.
+
+MuiLayout.tsx
+
+import { Box, Stack, Divider, Grid, Paper } from "@mui/material";
+
+export const MuiLayout = () => {
+  return (
+    <Paper sx={{ padding: "32px" }} elevation={4}> //Elevation provides more shadow
+      <Stack
+        sx={{ border: "1px solid" }}
+        direction={"row"}
+        spacing={2}
+        divider={<Divider orientation="vertical" flexItem />}
+      >
+        <Box
+          sx={{
+            backgroundColor: "primary.main",
+            color: "white",
+            height: "300px",
+            width: "300px",
+            padding: "16px",
+            "&:hover": {
+              backgroundColor: "primary.light",
+            },
+          }}
+        >
+          Box
+        </Box>
+        <Box
+          display="flex"
+          height="300px"
+          width="300px"
+          bgcolor="success.light"
+          p={2} //Padding, 2 would be 16px
+        >
+          Box 2
+        </Box>
+      </Stack>
+      <Grid container my={4} spacing={2}>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 1
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 2
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 3
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 4
+          </Box>
+        </Grid>
+      </Grid>
+    </Paper>
+  );
+};
+

@@ -1,0 +1,49 @@
+Grid
+
+It is used to create 2 dimensional layouts
+- grid container (parent)
+- grid item (children)
+
+Ex.
+
+MuiLayout.tsx
+
+import { Grid } from "@mui/material";
+export const MuiLayout = () => {
+  return (
+    <>
+      <Grid container my={4} spacing={2}> //my stands of margin-y axis
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 1
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 2
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 3
+          </Box>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Box bgcolor="primary.light" p={2}>
+            Item 4
+          </Box>
+        </Grid>
+      </Grid>
+    </>
+  );
+};
+
+
+------------
+
+The grid consists of 12 imaginary columns
+- xs for mobile device size
+- sm for tablet
+- md for desktop
+- lg/xl for large monitors
+

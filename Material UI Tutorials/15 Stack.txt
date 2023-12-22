@@ -1,0 +1,46 @@
+Stack
+
+It is used to manage layout in 1 dimension, vertical or horizontal 
+- arranges all child elements in a column by default
+
+Ex.
+
+MuiLayout.tsx
+
+import { Box, Stack, Divider } from "@mui/material";
+
+export const MuiLayout = () => {
+  return (
+    <Stack
+      sx={{ border: "1px solid" }}
+      direction={"row"}
+      spacing={2} //16px 
+      divider={<Divider orientation="vertical" flexItem />  }
+    >
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          color: "white",
+          height: "300px",
+          width: "300px",
+          padding: "16px",
+          "&:hover": {
+            backgroundColor: "primary.light",
+          },
+        }}
+      >
+        Box
+      </Box>
+      <Box
+        display="flex"
+        height="300px"
+        width="300px"
+        bgcolor="success.light"
+        p={2} //Padding, 2 would be 16px
+      >
+        Box 2
+      </Box>
+    </Stack>
+  );
+};
+
