@@ -1,0 +1,62 @@
+CSS Module
+
+CSS Module allows to scope CSS locally to the component
+- every component will have its own css stylesheet
+- avoid global namespace conflicts
+
+Ex.
+
+InlineComponent.module.css 
+
+.header {
+  color: salmon;
+  font-size: 80px;
+  text-align: center;
+}
+
+OutlineComponent.module.css
+
+.header {
+  color: salmon;
+  font-size: 80px;
+  text-align: center;
+}
+
+InlineComponent.jsx
+
+import styles from "./inlineComponent.module.css";
+
+export const InlineComponent = () => {
+  return (
+    <div>
+      <h1 className={styles.header}>Inline Component</h1>
+    </div>
+  );
+};
+
+OutlineComponent.jsx
+
+import styles from "./outlineComponent.module.css";
+
+export const OutlineComponent = () => {
+  return (
+    <div>
+      <h1 className={styles.header}>Outline Component</h1>
+    </div>
+  );
+};
+
+
+App.jsx
+
+import { InlineComponent } from "./components/InlineComponent";
+import { OutlineComponent } from "./components/OutlineComponent";
+
+function App() {
+  return (
+    <>
+      <InlineComponent />
+    </>
+  );
+}
+export default App;

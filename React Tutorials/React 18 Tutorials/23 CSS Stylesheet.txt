@@ -1,0 +1,38 @@
+CSS Stylesheet
+
+CSS stylesheet can be created and import to component(s)
+
+Ex.
+
+Style.css
+
+.header {
+  color: yellowgreen;
+  font-size: 100px;
+  text-align: center;
+}
+
+InlineComponent.jsx
+
+import "../css/style.css";
+
+export const InlineComponent = () => {
+  return (
+    <div>
+      <h1 className="header">Inline Component</h1>
+    </div>
+  );
+};
+
+App.jsx
+
+import { InlineComponent } from "./components/InlineComponent";
+
+function App() {
+  return (
+    <>
+      <InlineComponent />
+    </>
+  );
+}
+export default App;

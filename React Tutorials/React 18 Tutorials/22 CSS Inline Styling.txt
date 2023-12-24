@@ -1,0 +1,48 @@
+CSS Inline Styling 
+
+It can be applied directly to elements using the style attribute
+
+Ex.
+
+InlineComponent.jsx
+
+export const InlineComponent = () => {
+
+  return (
+    <div>
+      <h1 style={{ color: "blue", fontSize: "100px", textAlign: "center" }}>
+        Inline Component
+      </h1>
+    </div>
+  );
+};
+
+--- or ---
+
+  const inlineStyle = {
+    color: "green",
+    fontSize: "100px",
+    textAlign: "center",
+  };
+export const InlineComponent = () => {
+
+  return (
+    <div>
+      <h1 style={inlineStyle}>Inline Component</h1>
+    </div>
+  );
+};
+
+
+App.jsx
+
+import { InlineComponent } from "./components/InlineComponent";
+
+function App() {
+  return (
+    <>
+      <InlineComponent />
+    </>
+  );
+}
+export default App;
