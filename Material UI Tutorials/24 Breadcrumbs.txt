@@ -1,0 +1,38 @@
+Breadcrumbs
+
+It is a navigational aid that shows user's current location within an app
+- to use breadcrumbs, import Breadcrumbs and Link
+- separator 	is forward slash by default
+
+Ex.
+
+Link.tsx
+
+import { Stack, Link, Typography } from "@mui/material";
+
+export const MuiLink = () => {
+  return (
+    <Stack spacing={2} direction="row" m={4}>
+      <Link href="#">Link</Link>
+      <Link href="#" color="secondary" underline="hover">
+        Secondary
+      </Link>
+      <Link href="#" underline="none">
+        No underline
+      </Link>
+      <Typography variant="h6">
+        <Link href="#">Link variant with Typography</Link>
+      </Typography>
+      <Link href="#" variant="h6">
+        Link variant without Typography
+      </Link>
+    </Stack>
+  );
+};
+
+
+------------
+
+This tutorial shows different types of links
+
+

@@ -1,7 +1,7 @@
 Accordion
 
 It is used to toggle content which is collapsed by default
-- to use accordion, import accordion, accordion summary, accordion details
+- to use accordion, import Accordion, AccordionSummary, AccordionDetails
 - Eg. QnA section of a website
 
 Ex.

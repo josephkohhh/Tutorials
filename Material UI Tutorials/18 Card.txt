@@ -1,7 +1,7 @@
 Card
 
 It is used to create a card UI 
-- to use card, import card and card content
+- to use card, import Card and CardContent
 
 Ex.
 

@@ -1,7 +1,7 @@
 ImageList
 
 It is used to display a collection of images in an organised grid
-- to use image list, import image list and image list item
+- to use image list, import ImageList and ImageListItem
 
 Ex.
 

@@ -1,7 +1,7 @@
 Navbar
 
 A navigation bar
-- to use navbar, import appbar and toolbar
+- to use navbar, import AppBar and Toolbar
 - position set to fixed by default
 
 Ex.

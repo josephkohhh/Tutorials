@@ -1,7 +1,7 @@
 Menu
 
 It is navbar sub links when clicked 
-- to use menu, import menu and menuitem
+- to use menu, import Menu and MenuItem
 
 
 Ex.

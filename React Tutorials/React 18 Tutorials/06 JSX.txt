@@ -36,4 +36,8 @@ function App() {
 
 export default App;
 
+------------
 
+Starting from react 17, import React from 'react'; can be omitted 
+- introduction of automatic runtime import
+- JSX transform is aware of React obj and auto import if needed
