@@ -1,0 +1,76 @@
+List
+
+It is a list item 
+- to use list, import List, ListItem, ListItemText
+- Eg. display list from an array
+
+Ex.
+
+MuiList.tsx
+
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  ListItemAvatar,
+  Avatar,
+  ListItemButton,
+  Divider,
+} from "@mui/material";
+import MailIcon from "@mui/icons-material/Mail";
+
+export const MuiList = () => {
+  return (
+    <>
+      <Box sx={{ width: "400px", bgcolor: "#efefef" }}>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <ListItemAvatar>
+                  <Avatar>
+                    <MailIcon />
+                  </Avatar>
+                </ListItemAvatar>
+              </ListItemIcon>
+              <ListItemText primary="List item 1" secondary="Secondary text" />
+            </ListItemButton>
+          </ListItem>
+
+          <Divider />
+
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar>
+                <MailIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="List item 2" secondary="Secondary text" />
+          </ListItem>
+
+          <Divider />
+
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar>
+                <MailIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="List item 3" secondary="Secondary text" />
+          </ListItem>
+        </List>
+      </Box>
+    </>
+  );
+};
+
+
+------------
+
+This tutorial shows how to create list items
+- created avatar to contain mail icon 
+- added list item button to make list item clickable
+- added divider to separate list items
+

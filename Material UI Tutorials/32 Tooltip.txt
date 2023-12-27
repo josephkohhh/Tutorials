@@ -1,0 +1,34 @@
+Tooltip
+
+It display informative text when hover over
+- to use Tooltip, import Tooltip
+
+Ex.
+
+MuiTooltip.tsx
+
+import { Tooltip, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+
+export const MuiTooltip = () => {
+  return (
+    <Tooltip
+      title="Delete"
+      placement="bottom"
+      arrow
+      enterDelay={500}
+      leaveDelay={200}
+    >
+      <IconButton>
+        <DeleteIcon />
+      </IconButton>
+    </Tooltip>
+  );
+};
+
+------------
+
+This tutorial shows how to add tooltips 
+- placement dictates where the tooltip will be positioned
+- arrow gives more clear indication 
+- enterDelay/leaveDelay adds delay when hover

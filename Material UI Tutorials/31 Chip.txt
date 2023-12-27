@@ -1,0 +1,59 @@
+Chip
+
+It allows users to enter information, make selection, alter content or trigger actions
+- to use Chip, import Chip
+- Eg. showcasing tags from a blogpost, filter tags
+
+Ex.
+
+MuiChip.tsx
+
+import { Stack, Chip, Avatar } from "@mui/material";
+import FaceIcon from "@mui/icons-material/Face";
+import { useState } from "react";
+
+export const MuiChip = () => {
+  const [chips, setChips] = useState(["Chip 1 ", "Chip 2 ", "Chip 3 "]);
+  const handleDelete = (chipToDelete: string) => {
+    setChips((chips) => chips.filter((chip) => chip !== chipToDelete));
+  };
+  return (
+    <Stack direction="row" spacing={1}>
+      <Chip label="Chip" color="primary" size="medium"></Chip>
+      <Chip
+        label="Chip outlined"
+        color="secondary"
+        size="medium"
+        variant="outlined"
+      ></Chip>
+      <Chip
+        label="Chip outlined"
+        color="secondary"
+        variant="outlined"
+        avatar={<Avatar>JK</Avatar>}
+      ></Chip>
+      <Chip label="Chip" color="success" icon={<FaceIcon />}></Chip>
+      <Chip
+        label="Click"
+        color="success"
+        onClick={() => alert("Clicked")}
+      ></Chip>
+      <Chip
+        label="Delete"
+        color="error"
+        onClick={() => alert("Clicked")}
+        onDelete={() => alert("Deleted")}
+      ></Chip>
+      {chips.map((c) => (
+        <Chip key={c} label={c} onDelete={() => handleDelete(c)} />
+      ))}
+    </Stack>
+  );
+};
+
+
+------------
+
+This tutorial shows how to utilise chips
+- created clickable chips with handlers
+- created array of chips with handlers
