@@ -1,0 +1,171 @@
+Table 
+
+It displays a table of data 
+- to use Table, import TableContainer, Table, TableHead, TableBody, TableRow, TableCell
+- to get dummy data, go to https://www.mockaroo.com/
+- for customized table that can do sort, filter, etc, use react table package
+- for basic table data display, just use MUI table 
+
+Ex.
+
+MuiTable.tsx
+
+import {
+  TableContainer,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  Paper,
+} from "@mui/material";
+
+export const MuiTable = () => {
+  return (
+    <>
+      <TableContainer component={Paper} sx={{ maxHeight: "300px" }}>
+        <Table aria-label="simple table" stickyHeader>
+          <TableHead>
+            <TableRow>
+              <TableCell>Id</TableCell>
+              <TableCell>First Name</TableCell>
+              <TableCell>Last Name</TableCell>
+              <TableCell align="center">Email</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {tableData.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{row.id}</TableCell>
+                <TableCell>{row.first_name}</TableCell>
+                <TableCell>{row.last_name}</TableCell>
+                <TableCell align="center">{row.email}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      <TableContainer component={Paper} sx={{ marginTop: "100px" }}>
+        <Table aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Id</TableCell>
+              <TableCell>First Name</TableCell>
+              <TableCell>Last Name</TableCell>
+              <TableCell align="center">Email</TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {tableData.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{row.id}</TableCell>
+                <TableCell>{row.first_name}</TableCell>
+                <TableCell>{row.last_name}</TableCell>
+                <TableCell align="center">{row.email}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
+  );
+};
+
+const tableData = [
+  {
+    id: 1,
+    first_name: "Hilary",
+    last_name: "Robbings",
+    email: "hrobbings0@nationalgeographic.com",
+    gender: "Male",
+    ip_address: "236.144.209.79",
+  },
+  {
+    id: 2,
+    first_name: "Ivor",
+    last_name: "Kolin",
+    email: "ikolin1@indiegogo.com",
+    gender: "Male",
+    ip_address: "108.130.53.186",
+  },
+  {
+    id: 3,
+    first_name: "Artus",
+    last_name: "Tallboy",
+    email: "atallboy2@ameblo.jp",
+    gender: "Male",
+    ip_address: "45.222.87.182",
+  },
+  {
+    id: 4,
+    first_name: "Lauri",
+    last_name: "Gillian",
+    email: "lgillian3@chicagotribune.com",
+    gender: "Female",
+    ip_address: "39.106.207.125",
+  },
+  {
+    id: 5,
+    first_name: "Wittie",
+    last_name: "Frenchum",
+    email: "wfrenchum4@mediafire.com",
+    gender: "Male",
+    ip_address: "104.6.133.185",
+  },
+  {
+    id: 6,
+    first_name: "Maxi",
+    last_name: "Littell",
+    email: "mlittell5@businessinsider.com",
+    gender: "Female",
+    ip_address: "145.204.74.219",
+  },
+  {
+    id: 7,
+    first_name: "Rubie",
+    last_name: "Spoure",
+    email: "rspoure6@nytimes.com",
+    gender: "Female",
+    ip_address: "222.154.111.253",
+  },
+  {
+    id: 8,
+    first_name: "Raynell",
+    last_name: "Logsdale",
+    email: "rlogsdale7@nydailynews.com",
+    gender: "Female",
+    ip_address: "24.123.36.234",
+  },
+  {
+    id: 9,
+    first_name: "Zacharie",
+    last_name: "Jallin",
+    email: "zjallin8@php.net",
+    gender: "Male",
+    ip_address: "242.133.61.48",
+  },
+  {
+    id: 10,
+    first_name: "Nance",
+    last_name: "Wigmore",
+    email: "nwigmore9@examiner.com",
+    gender: "Agender",
+    ip_address: "72.61.64.19",
+  },
+];
+
+
+------------
+
+This tutorial shows how to display data in a table 
+- structure of a table (TableContainer > Table > TableHead > TableBody > TableRow > TableCell) 
+- using MUI Paper gives the table elevation 
+- stickyHeader makes the TableHead stay in position even when scrolled 
