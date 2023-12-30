@@ -1,0 +1,69 @@
+Dialog
+
+A type of modal to present information or ask for a decision
+- it will interrupt user's task unlike Alert & Snackbar
+- to use Dialog, import Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions
+- for Dialog to open/close, create a state
+- in real word, after clicking submit button, it can trigger an api call
+- Eg. Forms, list of items, etc
+
+Ex.
+
+MuiDialog.tsx
+
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from "@mui/material";
+import { useState } from "react";
+
+export const MuiDialog = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        Open dialog
+      </Button>
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-description"
+      >
+        <DialogTitle id="dialog-itile">Submit the test?</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="dialog-description">
+            Are you sure? You will not be able to edit after submission
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            variant="contained"
+            color="success"
+            autoFocus
+            onClick={() => setOpen(false)}
+          >
+            Submit
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            autoFocus
+            onClick={() => setOpen(false)}
+          >
+            Cancel
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+};
+
+
+------------
+
+This tutorial shows a standard dialog 
