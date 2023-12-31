@@ -1,0 +1,65 @@
+Loading Button 
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- to use them, install lab package (Currently @mui/lab has a peer dependency conflict with React 18)
+  Step 1: npm install @mui/material @emotion/react @emotion/styled  
+  Step 2: npm install lab @mui/material
+
+It is a button that shows a loading state with help of loading prop
+- to use LoadingButton, import LoadingButton
+
+
+Ex.
+
+MuiLoadingButton.tsx
+
+import { Box, Stack } from "@mui/material";
+import { LoadingButton } from "@mui/lab/";
+import SaveIcon from "@mui/icons-material/Save";
+
+export const MuiLoadingButton = () => {
+  return (
+    <Stack spacing={4}>
+      <Stack spacing={2} direction={"row"}>
+        <LoadingButton variant="outlined">Submit</LoadingButton>
+        <LoadingButton loading variant="outlined"></LoadingButton>
+      </Stack>
+
+      <Stack spacing={2} direction={"row"}>
+        <LoadingButton loadingIndicator="Loading..." variant="outlined">
+          Fetch Data
+        </LoadingButton>
+        <LoadingButton loading loadingIndicator="Loading..." variant="outlined">
+          Fetch Data
+        </LoadingButton>
+      </Stack>
+
+      <Stack spacing={2} direction={"row"}>
+        <LoadingButton
+          variant="outlined"
+          loadingPosition="start"
+          startIcon={<SaveIcon />}
+        >
+          Save
+        </LoadingButton>
+        <LoadingButton
+          variant="outlined"
+          loadingPosition="start"
+          loading
+          startIcon={<SaveIcon />}
+        >
+          Save
+        </LoadingButton>
+      </Stack>
+    </Stack>
+  );
+};
+
+
+-----------
+
+This tutorial shows the usage of Loading button
+- when loading prop is invoked, button will change state to loading
+

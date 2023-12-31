@@ -1,0 +1,43 @@
+Date Range Picker
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- in 2023, this component is moved from @mui/lab to @mui/x-date-pickers-pro
+  Step 1: npm install @mui/x-date-pickers-pro 
+  Step 2: npm install date-fns
+
+A UI that allows user to pick a range of date
+- to use Date Range Picker
+  - import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider' in App component
+  - import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns' in App component
+  - import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro"; in specified component
+
+Ex.
+
+MuiDateRangePicker.tsx
+
+import { Box } from "@mui/material";
+import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro";
+import { useState } from "react";
+
+export const MuiDateRangePicker = () => {
+  const [value, setValue] = useState<DateRange<Date>>([null, null]);
+  return (
+    <Box width={500}>
+      <DateRangePicker
+        localeText={{ start: "Check-in", end: "Check-out" }}
+        value={value}
+        onChange={(newValue) => setValue(newValue)}
+      />
+    </Box>
+  );
+};
+
+
+-----------
+
+This tutorial shows the usage of DateRangePicker with state to store changes 
+
+
+

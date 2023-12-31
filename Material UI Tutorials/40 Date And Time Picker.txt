@@ -1,0 +1,63 @@
+Date and Time Picker
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- in 2023, this component is moved from @mui/lab to @mui/x-date-pickers
+  Step 1: npm install @mui/x-date-pickers 
+  Step 2: npm install date-fns
+
+A UI that allows user to pick a date and time
+- to use Date and Time Picker
+  - import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider' in App component
+  - import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns' in App component
+  - import { DatePicker, TimePicker, DateTimePicker } from "@mui/x-date-pickers"; in specified component
+
+Ex.
+
+MuiDateAndTimePicker.tsx
+
+import { Stack } from "@mui/material";
+import { DatePicker, TimePicker, DateTimePicker } from "@mui/x-date-pickers";
+import { useState } from "react";
+
+export const MuiDateAndTimePicker = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<Date | null>(null);
+  const [selectedDateTime, setSelectedDateTime] = useState<Date | null>(null);
+
+  console.log(selectedDate);
+  console.log({
+    selectedTime: selectedTime && selectedTime.toLocaleTimeString(),
+  });
+
+  return (
+    <Stack spacing={2} sx={{ width: "250px" }}>
+      <DatePicker
+        label="Date Picker"
+        value={selectedDate}
+        onChange={(newValue) => setSelectedDate(newValue)}
+      ></DatePicker>
+      <TimePicker
+        label="Time Picker"
+        value={selectedTime}
+        onChange={(newValue) => setSelectedTime(newValue)}
+      ></TimePicker>
+      <DateTimePicker
+        label="Date & Time Picker"
+        value={selectedDateTime}
+        onChange={(newValue) => setSelectedDateTime(newValue)}
+      ></DateTimePicker>
+    </Stack>
+  );
+};
+
+
+-----------
+
+This tutorial shows the usage of Date And Time Picker with state to store changes 
+- Date picker
+- Time picker
+- Date and Time picker
+
+
