@@ -1,0 +1,100 @@
+Tabs
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- to use them, install lab package (Currently @mui/lab has a peer dependency conflict with React 18)
+  Step 1: npm install @mui/material @emotion/react @emotion/styled  
+  Step 2: npm install lab @mui/material
+
+It allows organize content across different sections
+- importing tabs from lab package is easier to use
+- to use Tabs,
+  - import { Tab } from "@mui/material";
+  - import { TabContext, TabList, TabPanel } from "@mui/lab";
+- manage active tab with state 
+
+
+Ex.
+
+MuiTabs.tsx
+
+import { Box, Tab } from "@mui/material";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import FavouriteIcon from "@mui/icons-material/Favorite";
+import { useState } from "react";
+
+export const MuiTabs = () => {
+  const [value, setValue] = useState("1");
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+  return (
+    <Box>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <TabList
+            aria-label="Tabs example"
+            onChange={handleChange}
+            textColor="secondary"
+            indicatorColor="secondary"
+            centered
+          >
+            <Tab
+              label="Tab One"
+              value="1"
+              icon={<FavouriteIcon />}
+              iconPosition="start"
+            />
+            <Tab label="Tab Two" value="2" />
+            <Tab label="Tab Three" value="3" disabled />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Panel One</TabPanel>
+        <TabPanel value="2">Panel Two</TabPanel>
+        <TabPanel value="3">Panel Three</TabPanel>
+      </TabContext>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", width: "300px" }}>
+          <TabList
+            aria-label="Tabs example"
+            onChange={handleChange}
+            textColor="secondary"
+            indicatorColor="secondary"
+            variant="scrollable"
+            scrollButtons="auto"
+          >
+            <Tab
+              label="Tab One"
+              value="1"
+              icon={<FavouriteIcon />}
+              iconPosition="start"
+            />
+            <Tab label="Tab Two" value="2" />
+            <Tab label="Tab Three" value="3" disabled />
+            <Tab label="Tab Four" value="4" />
+            <Tab label="Tab Five" value="5" />
+            <Tab label="Tab Six" value="6" />
+            <Tab label="Tab Seven" value="7" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Panel One</TabPanel>
+        <TabPanel value="2">Panel Two</TabPanel>
+        <TabPanel value="3">Panel Three</TabPanel>
+        <TabPanel value="4">Panel Four</TabPanel>
+        <TabPanel value="5">Panel Five</TabPanel>
+        <TabPanel value="6">Panel Six</TabPanel>
+        <TabPanel value="7">Panel Seven</TabPanel>
+      </TabContext>
+    </Box>
+  );
+};
+
+
+
+-----------
+
+This tutorial shows how to use tabs
+
+
+

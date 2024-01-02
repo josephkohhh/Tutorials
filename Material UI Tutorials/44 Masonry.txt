@@ -1,0 +1,88 @@
+Masonry 
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- to use them, install lab package (Currently @mui/lab has a peer dependency conflict with React 18)
+  Step 1: npm install @mui/material @emotion/react @emotion/styled  
+  Step 2: npm install lab @mui/material
+
+It maintains a list of content blocks with a consistent width but different height
+- contents are ordered by row, if row is already filled with specified columns, the next
+  item starts in another row and is added to the shortest column to optimise the use of space
+- to use Masonry,
+  - import { Masonry } from "@mui/lab";
+- Eg. Showcase a gallery
+
+
+Ex.
+
+MuiMasonry.tsx
+
+import {
+  Box,
+  Paper,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+} from "@mui/material";
+import { Masonry } from "@mui/lab";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+export const MuiMasonry = () => {
+  const heights = [
+    150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80,
+  ];
+  return (
+    <>
+      <Box sx={{ width: "500px", minHeight: "400px" }}>
+        <Masonry columns={4} spacing={1}>
+          {heights.map((height, index) => (
+            <Paper
+              key={index}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height,
+                border: "1px solid",
+              }}
+            >
+              {index + 1}
+            </Paper>
+          ))}
+        </Masonry>
+      </Box>
+
+      <Box sx={{ width: "500px", minHeight: "400px" }}>
+        <Masonry columns={4} spacing={1}>
+          {heights.map((height, index) => (
+            <Paper
+              key={index}
+              sx={{
+                border: "1px solid",
+              }}
+            >
+              <Accordion sx={{ minHeight: height }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography>Accordion {index + 1}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>Content</AccordionDetails>
+              </Accordion>
+            </Paper>
+          ))}
+        </Masonry>
+      </Box>
+    </>
+  );
+};
+
+
+
+-----------
+
+This tutorial shows the usage of Masonry
+
+
+

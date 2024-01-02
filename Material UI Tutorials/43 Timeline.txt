@@ -1,0 +1,81 @@
+Timeline 
+
+This component is under lab package development 
+- is under development before they are part of core package
+- already at the stage where you can start using them
+- to use them, install lab package (Currently @mui/lab has a peer dependency conflict with React 18)
+  Step 1: npm install @mui/material @emotion/react @emotion/styled  
+  Step 2: npm install lab @mui/material
+
+It is a UI represent a sequence of events or a process
+- to use Timeline,
+  - import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+} from "@mui/lab";
+
+Ex.
+
+MuiTimeline.tsx 
+
+import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineOppositeContent,
+} from "@mui/lab";
+
+export const MuiTimeline = () => {
+  return (
+    <>
+      <Timeline position="alternate">
+        <TimelineItem>
+          <TimelineOppositeContent color={"text.secondary"}>
+            09:30am
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot color="secondary" variant="outlined" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>City A</TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineOppositeContent color={"text.secondary"}>
+            10:30am
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot color="secondary" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>City B</TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color="secondary" />
+          </TimelineSeparator>
+          <TimelineContent>City C</TimelineContent>
+        </TimelineItem>
+      </Timeline>
+    </>
+  );
+};
+
+
+
+-----------
+
+This tutorial shows the usage of Timeline 
+- the last timeline do not need a <TimelineConnector/>
+- <TimelineOppositeContent/> creates content opposite to the <TimelineContent/>
+
+
+
