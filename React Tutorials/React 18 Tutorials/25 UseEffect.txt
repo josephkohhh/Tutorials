@@ -1,0 +1,57 @@
+UseEffect
+
+It is a hook that is used to perform side effect
+- the template for it: 
+	
+  import { useEffect } from 'react';
+  
+  useEffect(() => {
+  // The code that we want to run
+
+  // Optional return function
+  }, []); //The dependency array 
+
+Ex.
+
+Counter.jsx 
+
+import { useEffect, useState } from "react";
+
+export const CountProgram = () => {
+  const styles = {
+    margin: "20px",
+  };
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    // The code that we want to run
+    console.log("The count is:", value);
+
+    // Optional return function
+    return () => {
+      console.log("I am being cleaned up!");
+    };
+  }, [value]); //The dependency array
+
+  return (
+    <div style={styles}>
+      <h2>Count: {value}</h2>
+      <button onClick={() => setValue(value + 1)}>Increment</button>
+      <button onClick={() => setValue(value - 1)}>Decrement</button>
+      <button onClick={() => setValue(value)}>Same</button>
+    </div>
+  );
+};
+
+
+--------------
+
+useEffect()
+- once init useEffect(), it will be mounted (It will execute the code 1 time regardless)
+- The code that will run if there is a change detected in the array, [count]
+- The return function acts a cleanup to unmount/destroy the useEffect hook 
+- The array which tells the useEffect what it should listen/react to 
+
+
+
+
