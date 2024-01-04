@@ -1,0 +1,27 @@
+Component Life Cycle 
+
+There are 3 phases in a component life cycle
+- Mounting
+- Update
+- Unmounting
+
+Ex.
+
+  // Mounting Phase
+  useEffect(() => {
+    console.log("Mounting phase");
+  }, []);
+
+  // Updating Phase
+  useEffect(() => {
+    console.log("Updating phase");
+  }, []);
+
+  // Unmounting Phase
+  useEffect(() => {
+    //console.log("Updating phase");
+    return () => {
+      console.log("Unmounting phase");
+    };
+  }, []);
+

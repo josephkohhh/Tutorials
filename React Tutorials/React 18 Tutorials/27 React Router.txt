@@ -1,0 +1,52 @@
+React Router
+
+It is a library for handling navigation enabling SPA app to have multiple views without
+triggering a full page reload 
+- to use React Router, npm install react-router-dom
+- in main app, import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+- in navbar component, import { Link } from "react-router-dom";
+
+Ex.
+
+Navbar.jsx
+
+import { Link } from "react-router-dom";
+
+export const Navbar = () => {
+  return (
+    <>
+      <a
+        href="https://github.com/josephkohhh/TaskMaster"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button>Code</Button>
+      </a>
+      <Link to="/home">
+        <Button>Home</Button>
+      </Link>
+    </>
+  );
+};
+
+App.jsx
+
+import { Navbar } from "./components/Navbar";
+import { Home } from "./components/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+function App() {
+  return (
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route index element={<Home />} /> // Default route
+            <Route path="/home" element={<Home />} />
+          </Routes>
+        </div>
+      </Router>
+  );
+}
+
+

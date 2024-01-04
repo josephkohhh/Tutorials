@@ -1,7 +1,14 @@
 UseEffect
 
 It is a hook that is used to perform side effect
-- the template for it: 
+- Side effect can include tasks such as:
+  - data fetching
+  - subscriptions
+  - manual DOM manipulation 
+  - setting up timers or intervals
+  - dependencies or conditional effects
+
+The template for useEffect: 
 	
   import { useEffect } from 'react';
   
@@ -10,6 +17,8 @@ It is a hook that is used to perform side effect
 
   // Optional return function
   }, []); //The dependency array 
+
+
 
 Ex.
 
@@ -48,10 +57,7 @@ export const CountProgram = () => {
 
 useEffect()
 - once init useEffect(), it will be mounted (It will execute the code 1 time regardless)
-- The code that will run if there is a change detected in the array, [count]
+- The code that will run if there is a change detected in the dependency array, [count]
 - The return function acts a cleanup to unmount/destroy the useEffect hook 
-- The array which tells the useEffect what it should listen/react to 
-
-
 
 
