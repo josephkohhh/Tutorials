@@ -1,0 +1,44 @@
+Axios
+
+It is a library for handling HTTP request and response
+- Used to fetch data from APIs 
+
+Ex.
+
+AxiosExample.jsx
+
+import axios from "axios";
+import { useState } from "react";
+
+export const Axios = () => {
+  const [data, setData] = useState("");
+  const getData = () => {
+    axios
+      .get("https://api.quotable.io/random") 
+      .then((response) => {
+        console.log(response.data.content);
+        setData(response.data.content);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  return (
+    <div>
+      <button onClick={getData}>Fetch data</button>
+      {data ? <p>{data}</p> : "No such data exist"}
+    </div>
+  );
+};
+
+-----------
+
+This component demonstrates how to call an api using axios
+- once button clicked, invoke getData function
+- using get method to retrieve data
+  - then() returns a promise if successful call
+    - update the state of the data 
+  - catch() returns an error log if call fails
+
+
+
